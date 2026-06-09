@@ -1,79 +1,100 @@
-import Image from "next/image";
-
-const showcases = [
+const modules = [
   {
     title: "Attendance Management",
     description:
-      "Digitally track daily attendance, monitor absentee trends and generate reports instantly.",
-    image: "/attendance-dashboard.png",
+      "Track daily attendance, monitor absentee trends and generate reports instantly.",
+    type: "image",
   },
   {
     title: "Fee Management",
     description:
-      "Track payments, manage pending dues and streamline school finance operations.",
-    image: "/fee-management.png",
+      "Manage fee collections, dues and payment tracking without manual spreadsheets.",
+    type: "image",
   },
   {
     title: "Exams & Result Management",
     description:
       "Schedule exams, manage marks and generate report cards efficiently.",
-    image: "/exam-results.png",
+    type: "video",
   },
   {
-    title: "Payroll & Administration",
+    title: "Payroll & Staff Management",
     description:
-      "Simplify payroll processing, staff records and administrative operations.",
-    image: "/payroll-dashboard.png",
+      "Simplify payroll processing, employee records and staff administration.",
+    type: "image",
   },
 ];
 
 export default function ProductShowcase() {
   return (
-    <section className="bg-slate-50 py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-            Real ERP Features
-          </span>
+    <section className="relative overflow-hidden bg-white py-32">
+      <div className="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-blue-100 blur-[120px] opacity-40" />
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900">
-            Built to Simplify School Operations
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-medium text-blue-700">
+            Product Showcase
+          </div>
+
+          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
+            Everything You Need to Run a Modern School
           </h2>
 
-          <p className="mt-4 text-lg text-slate-600">
-            From attendance and fee management to exams and payroll —
-            OptimSkool centralizes everything into one platform.
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            From attendance and fees to exams and payroll —
+            OptimSkool centralizes every school workflow in one platform.
           </p>
         </div>
 
-        <div className="mt-20 space-y-28">
-          {showcases.map((item, index) => (
+        <div className="mt-28 space-y-32">
+          {modules.map((module, index) => (
             <div
-              key={item.title}
-              className={`grid items-center gap-12 lg:grid-cols-2 ${
-                index % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""
+              key={module.title}
+              className={`grid items-center gap-14 lg:grid-cols-2 ${
+                index % 2 !== 0
+                  ? "lg:[&>*:first-child]:order-2"
+                  : ""
               }`}
             >
               <div>
-                <h3 className="text-3xl font-bold text-slate-900">
-                  {item.title}
+                <div className="inline-flex rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
+                  Module {index + 1}
+                </div>
+
+                <h3 className="mt-5 text-3xl font-bold text-slate-900 lg:text-4xl">
+                  {module.title}
                 </h3>
 
-                <p className="mt-4 text-lg leading-8 text-slate-600">
-                  {item.description}
+                <p className="mt-5 max-w-lg text-lg leading-8 text-slate-600">
+                  {module.description}
                 </p>
+
+                <button className="mt-8 font-medium text-blue-600 hover:text-blue-700">
+                  Learn More →
+                </button>
               </div>
 
-              <div className="rounded-[32px] border border-slate-200 bg-white p-5 shadow-xl">
-                <div className="aspect-video overflow-hidden rounded-2xl bg-slate-100">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={1200}
-                    height={700}
-                    className="h-full w-full object-cover"
-                  />
+              {/* Media Placeholder */}
+              <div className="group relative">
+                <div className="absolute inset-0 rounded-[32px] bg-blue-200 blur-3xl opacity-20" />
+
+                <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-4 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+                  <div className="aspect-video rounded-[24px] border-2 border-dashed border-slate-300 bg-slate-100 flex items-center justify-center text-center p-6">
+                    <div>
+                      <div className="text-lg font-semibold text-slate-700">
+                        {module.type === "video"
+                          ? "Video Placeholder"
+                          : "Screenshot Placeholder"}
+                      </div>
+
+                      <p className="mt-2 text-sm text-slate-500">
+                        Add {module.title}{" "}
+                        {module.type === "video"
+                          ? "demo video"
+                          : "dashboard screenshot"} later
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

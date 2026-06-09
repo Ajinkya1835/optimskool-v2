@@ -1,51 +1,89 @@
-import { Button } from "@/components/ui/button";
-import { PlayCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
-        
-        <div>
-          <div className="mb-6 inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-            Built for Indian Schools & Educational Institutions
-          </div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24 lg:py-32">
 
-          <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl">
-            Complete School ERP Software for Smarter School Management
+      {/* Glow */}
+      <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-200/40 blur-[120px]" />
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+
+        {/* LEFT */}
+        <div>
+
+          <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
+            School ERP Platform
+          </span>
+
+          <h1 className="mt-7 text-5xl font-bold tracking-tight text-slate-900 lg:text-7xl">
+            Smarter School
+            Management with
+            <span className="text-blue-600">
+              {" "}OptimSkool
+            </span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-            Manage attendance, fees, exams, report cards, payroll and school administration — all in one platform.
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
+            Manage attendance,
+            examinations, fees,
+            student records,
+            results and school
+            administration through
+            one centralized ERP
+            platform.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button className="rounded-xl bg-blue-600 px-8 py-6 text-base hover:bg-blue-700">
-              Request Demo
-            </Button>
+          <div className="mt-10 flex flex-wrap gap-4">
 
-            <Button
-              variant="outline"
-              className="rounded-xl px-8 py-6 text-base"
+            <Link
+              href="/contact"
+              className="rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-blue-700"
             >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Watch Product Tour
-            </Button>
+              Request Demo
+            </Link>
+
+            <Link
+              href="/school-erp-software"
+              className="rounded-2xl border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              Explore ERP
+            </Link>
           </div>
 
-          <p className="mt-6 text-sm text-slate-500">
-            Attendance • Fees • Exams • Payroll • Student Management
-          </p>
-        </div>
+          <div className="mt-10 flex flex-wrap gap-3">
 
-        <div className="relative">
-          <div className="rounded-[30px] border border-slate-200 bg-white p-4 shadow-2xl">
-            <div className="aspect-video rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400">
-              ERP Dashboard Screenshot Here
-            </div>
+            {[
+              "Attendance",
+              "Fees",
+              "Examinations",
+              "Results",
+              "Student Records",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
+              >
+                {item}
+              </div>
+            ))}
           </div>
         </div>
 
+        {/* RIGHT */}
+        <div className="overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.15)]">
+
+          <div className="mb-4 flex gap-2">
+            <div className="h-3 w-3 rounded-full bg-red-300" />
+            <div className="h-3 w-3 rounded-full bg-yellow-300" />
+            <div className="h-3 w-3 rounded-full bg-green-300" />
+          </div>
+
+          <div className="aspect-video rounded-[30px] border-2 border-dashed border-slate-300 bg-slate-100 flex items-center justify-center text-center text-slate-500">
+            ERP Dashboard Screenshot
+            (Add Later)
+          </div>
+        </div>
       </div>
     </section>
   );

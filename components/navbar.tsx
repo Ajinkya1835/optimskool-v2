@@ -1,40 +1,98 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/about" },
-];
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const [scrolled, setScrolled] =
+    useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
+
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+  }, []);
+
+  const links = [
+    {
+      name: "School ERP",
+      href:
+        "/school-erp-software",
+    },
+    {
+      name: "Attendance",
+      href:
+        "/attendance-management-system",
+    },
+    {
+      name: "Fees",
+      href:
+        "/fee-management-system",
+    },
+    {
+      name: "Exams",
+      href:
+        "/exam-management-system",
+    },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="text-2xl font-bold tracking-tight">
-          Optim<span className="text-blue-600">Skool</span>
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? "border-b border-slate-200 bg-white/90 backdrop-blur-xl shadow-sm"
+          : "bg-white/70 backdrop-blur-lg"
+      }`}
+    >
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+
+        <Link
+          href="/"
+          className="text-2xl font-bold text-slate-900"
+        >
+          Optim
+          <span className="text-blue-600">
+            Skool
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+        <div className="hidden items-center gap-7 lg:flex">
+          {links.map((link) => (
             <Link
-              key={link.label}
+              key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-blue-600"
+              className={`text-sm font-medium transition ${
+                pathname === link.href
+                  ? "text-blue-600"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
             >
-              {link.label}
+              {link.name}
             </Link>
           ))}
-        </nav>
+        </div>
 
-        <Button className="rounded-xl bg-blue-600 px-6 py-5 hover:bg-blue-700">
+        <Link
+          href="/contact"
+          className="rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+        >
           Request Demo
-        </Button>
-      </div>
+        </Link>
+      </nav>
     </header>
   );
 }
