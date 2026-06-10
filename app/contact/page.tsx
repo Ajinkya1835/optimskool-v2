@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import FinalCTA from "@/components/final-cta";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact OptimSkool",
+
+  description:
+    "Book a demo, request pricing or discuss custom ERP requirements with OptimSkool.",
+
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -11,68 +19,204 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      <main className="bg-slate-50 py-24">
+      <main className="bg-white">
 
-        <div className="mx-auto max-w-3xl px-6">
+        {/* HERO */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-24 lg:py-32">
 
-          <div className="text-center">
-            <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-              Contact
+          <div className="mx-auto max-w-7xl px-6 text-center">
+
+            <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
+              Contact OptimSkool
             </span>
 
-            <h1 className="mt-6 text-5xl font-bold text-slate-900">
+            <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-black tracking-tight text-slate-900 lg:text-7xl">
               Request a Demo
+              <br />
+              or Talk to Our Team
             </h1>
 
-            <p className="mt-5 text-lg text-slate-600">
-              Submit your details and we
-              will get in touch with you.
+            <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-600">
+              Want to digitize your school?
+              Need pricing details or
+              custom ERP features?
+              Let’s discuss your requirements.
             </p>
+
           </div>
 
-          <div className="mt-14 rounded-[40px] border border-slate-200 bg-white p-10 shadow-sm">
+        </section>
 
-            <form className="space-y-5">
+        {/* CONTACT SECTION */}
+        <section className="bg-white py-24">
 
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full rounded-2xl border border-slate-300 px-5 py-4"
-              />
+          <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr]">
 
-              <input
-                type="text"
-                placeholder="School Name"
-                className="w-full rounded-2xl border border-slate-300 px-5 py-4"
-              />
+            {/* LEFT */}
+            <div>
 
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full rounded-2xl border border-slate-300 px-5 py-4"
-              />
+              <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+                Get in Touch
+              </span>
 
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full rounded-2xl border border-slate-300 px-5 py-4"
-              />
+              <h2 className="mt-6 text-4xl font-black text-slate-900">
+                Let's Build a Better
+                School ERP Together
+              </h2>
 
-              <textarea
-                rows={5}
-                placeholder="Message"
-                className="w-full rounded-2xl border border-slate-300 px-5 py-4"
-              />
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Whether you need attendance,
+                fees, payroll, transport or
+                completely custom ERP modules,
+                our team can help your institution.
+              </p>
 
-              <button
-                className="w-full rounded-2xl bg-blue-600 px-6 py-4 font-semibold text-white hover:bg-blue-700"
-              >
-                Submit Request
-              </button>
+              <div className="mt-10 space-y-6">
 
-            </form>
+                <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="font-bold text-slate-900">
+                    Email
+                  </h3>
+
+                  <p className="mt-2 text-slate-600">
+                    sales@metagrad.in
+                  </p>
+                </div>
+
+                <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="font-bold text-slate-900">
+                    Phone
+                  </h3>
+
+                  <p className="mt-2 text-slate-600">
+                    +91 8102775670
+                  </p>
+                </div>
+
+                <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="font-bold text-slate-900">
+                    Services
+                  </h3>
+
+                  <p className="mt-2 text-slate-600">
+                    School ERP • Attendance • Fees • Payroll • Exams • Results • Custom Development
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* FORM */}
+            <div className="rounded-[40px] border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+
+              <h3 className="text-2xl font-black text-slate-900">
+                Request Demo
+              </h3>
+
+              <p className="mt-2 text-slate-600">
+                Fill the details and our team will contact you.
+              </p>
+
+              <form className="mt-8 space-y-5">
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-700">
+                    School / Institution Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Enter school name"
+                    className="w-full rounded-2xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-500"
+                  />
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">
+                      Contact Person
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="Full name"
+                      className="w-full rounded-2xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">
+                      Phone Number
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="+91"
+                      className="w-full rounded-2xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-500"
+                    />
+                  </div>
+
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">
+                      Email
+                    </label>
+
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      className="w-full rounded-2xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">
+                      Student Strength
+                    </label>
+
+                    <select className="w-full rounded-2xl border border-slate-300 px-5 py-4 outline-none focus:border-blue-500">
+                      <option>Below 500</option>
+                      <option>500 - 1000</option>
+                      <option>1000 - 2000</option>
+                      <option>2000+</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-700">
+                    Requirements
+                  </label>
+
+                  <textarea
+                    rows={5}
+                    placeholder="Tell us what ERP modules or custom features you need..."
+                    className="w-full rounded-2xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full rounded-2xl bg-blue-600 px-6 py-4 text-lg font-semibold text-white transition hover:bg-blue-700"
+                >
+                  Request Demo
+                </button>
+
+              </form>
+
+            </div>
+
           </div>
-        </div>
+
+        </section>
+
+        <FinalCTA />
       </main>
 
       <Footer />

@@ -2,101 +2,154 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-white">
+    <footer className="bg-[#061327] text-white">
 
-      <div className="mx-auto max-w-7xl px-6 py-20">
+      
 
-        <div className="grid gap-12 lg:grid-cols-3">
+      {/* MAIN FOOTER */}
+      <section className="mx-auto max-w-7xl px-6 py-24">
 
-          {/* Brand */}
+        <div className="grid gap-16 lg:grid-cols-3">
+
+          {/* LEFT */}
           <div>
 
-            <Link
-              href="/"
-              className="text-3xl font-bold"
-            >
-              Optim
-              <span className="text-blue-500">
+            <h2 className="text-5xl font-bold">
+              Optim<span className="text-blue-500">
                 Skool
               </span>
-            </Link>
+            </h2>
 
-            <p className="mt-5 max-w-sm text-slate-400">
-              School ERP platform for
-              attendance, fees,
-              examinations, student
-              management and academic
-              administration.
-            </p>
-          </div>
-
-          {/* Solutions */}
-          <div>
-
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
-              Solutions
-            </h3>
-
-            <ul className="mt-5 space-y-3 text-slate-400">
-
-              <li>
-                <Link href="/school-erp-software">
-                  School ERP
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/attendance-management-system">
-                  Attendance
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/fee-management-system">
-                  Fee Management
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/exam-management-system">
-                  Exam Management
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/result-management-system">
-                  Result Management
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <div>
-
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
-              Get Started
-            </h3>
-
-            <p className="mt-5 text-slate-400">
-              Interested in OptimSkool?
-              Request a product demo.
+            <p className="mt-8 max-w-md text-lg leading-8 text-slate-300">
+              Empowering educational
+              institutions with
+              intelligent Smart
+              Education Platform
+              solutions.
             </p>
 
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex rounded-2xl bg-blue-600 px-6 py-4 font-semibold text-white hover:bg-blue-700"
-            >
-              Request Demo
-            </Link>
           </div>
+
+          {/* PRODUCT LINKS */}
+          <div>
+
+            <h3 className="text-2xl font-semibold">
+              Product
+            </h3>
+
+            <div className="mt-8 flex flex-col gap-5 text-slate-300">
+
+              <Link
+                href="/features"
+                className="hover:text-white"
+              >
+                Features
+              </Link>
+
+              <Link
+                href="/school-erp-software"
+                className="hover:text-white"
+              >
+                School ERP
+              </Link>
+
+              <Link
+                href="/attendance-management-system"
+                className="hover:text-white"
+              >
+                Attendance
+              </Link>
+
+              <Link
+                href="/fee-management-system"
+                className="hover:text-white"
+              >
+                Fee Management
+              </Link>
+
+              <Link
+                href="/exam-management-system"
+                className="hover:text-white"
+              >
+                Exam Management
+              </Link>
+
+            </div>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+
+            <h3 className="text-2xl font-semibold">
+              Contact
+            </h3>
+
+            <div className="mt-8 space-y-8 text-slate-300">
+
+              <div>
+                <p className="text-sm uppercase tracking-wide text-slate-400">
+                  Email
+                </p>
+
+                <p className="mt-2 text-lg text-white">
+                  sales@metagrad.in
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm uppercase tracking-wide text-slate-400">
+                  Phone
+                </p>
+
+                <p className="mt-2 text-lg text-white">
+                  +91 8102775670
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm uppercase tracking-wide text-slate-400">
+                  Support
+                </p>
+
+                <p className="mt-2 text-lg text-white">
+                  support@metagrad.in
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-8 text-center text-sm text-slate-500">
-          © 2026 OptimSkool.
-          All rights reserved.
+        {/* BOTTOM */}
+        <div className="mt-20 border-t border-slate-800 pt-10">
+
+          <div className="flex flex-col items-center justify-between gap-5 text-center text-slate-400 md:flex-row">
+
+            <p>
+              © 2026 OptimSkool.
+              All rights reserved.
+            </p>
+
+            <div className="flex gap-8">
+
+              <Link href="#">
+                Privacy Policy
+              </Link>
+
+              <Link href="#">
+                Terms of Service
+              </Link>
+
+              <Link href="#">
+                Cookie Policy
+              </Link>
+
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 }

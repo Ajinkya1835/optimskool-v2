@@ -10,37 +10,33 @@ import {
 const faqs = [
   {
     question:
-      "What is OptimSkool?",
+      "Can schools manage results digitally?",
     answer:
-      "OptimSkool is a school ERP platform designed to help schools manage attendance, fee records, examinations, student information and administration through one centralized system.",
+      "Yes, OptimSkool enables schools to manage student academic results digitally with centralized workflows.",
   },
-
   {
     question:
-      "Can attendance be managed digitally?",
+      "Can academic performance be tracked?",
     answer:
-      "Yes. OptimSkool includes attendance management capabilities for maintaining attendance records digitally.",
+      "Schools can monitor grades, exam performance and student academic progress in real-time.",
   },
-
   {
     question:
-      "Does OptimSkool support fee management?",
+      "Does OptimSkool support class-wise results?",
     answer:
-      "Yes. Schools can manage fee structures, fee records and related workflows digitally.",
+      "Yes, results can be filtered according to classrooms, exams and academic sessions.",
   },
-
   {
     question:
-      "Can schools manage examinations and results?",
+      "Can report cards be managed digitally?",
     answer:
-      "Yes. OptimSkool includes examination and result management related workflows.",
+      "Yes, schools can generate and manage structured student performance reports digitally.",
   },
-
   {
     question:
-      "Can student records be managed centrally?",
+      "Can results be filtered by exams?",
     answer:
-      "Yes. OptimSkool helps schools manage student information through one centralized platform.",
+      "Yes, OptimSkool allows result filtering through exam selection and classroom management.",
   },
 ];
 

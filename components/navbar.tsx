@@ -52,13 +52,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-slate-200 bg-white/90 backdrop-blur-xl shadow-sm"
-          : "bg-white/70 backdrop-blur-lg"
-      }`}
-    >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+  className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+    scrolled
+      ? "border-b border-slate-200 bg-white/90 backdrop-blur-xl shadow-sm"
+      : "bg-white/80 backdrop-blur-lg"
+  }`}
+>
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
 
         <Link
           href="/"

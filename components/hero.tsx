@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+const modules = [
+  "Admissions",
+  "Attendance",
+  "Fees",
+  "Examinations",
+  "Payroll",
+  "Certificates",
+  "Reports",
+  "Inventory",
+];
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24 lg:py-32">
@@ -13,25 +24,25 @@ export default function Hero() {
         <div>
 
           <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-            School ERP Platform
+            Complete School ERP Platform
           </span>
 
           <h1 className="mt-7 text-5xl font-bold tracking-tight text-slate-900 lg:text-7xl">
-            Smarter School
-            Management with
+            Complete School ERP
+            Software for Smarter
             <span className="text-blue-600">
-              {" "}OptimSkool
+              {" "}Management
             </span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
-            Manage attendance,
-            examinations, fees,
-            student records,
-            results and school
-            administration through
-            one centralized ERP
-            platform.
+            Manage admissions,
+            attendance, fees,
+            examinations, payroll,
+            certificates, inventory,
+            student records and school
+            administration through one
+            centralized ERP platform.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -49,17 +60,12 @@ export default function Hero() {
             >
               Explore ERP
             </Link>
+
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
 
-            {[
-              "Attendance",
-              "Fees",
-              "Examinations",
-              "Results",
-              "Student Records",
-            ].map((item) => (
+            {modules.map((item) => (
               <div
                 key={item}
                 className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
@@ -79,10 +85,11 @@ export default function Hero() {
             <div className="h-3 w-3 rounded-full bg-green-300" />
           </div>
 
-          <div className="aspect-video rounded-[30px] border-2 border-dashed border-slate-300 bg-slate-100 flex items-center justify-center text-center text-slate-500">
-            ERP Dashboard Screenshot
-            (Add Later)
-          </div>
+          <img
+            src="/images/dashboard-preview.png"
+            alt="OptimSkool Dashboard"
+            className="rounded-[30px] border border-slate-200"
+          />
         </div>
       </div>
     </section>
