@@ -1,32 +1,50 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://optimskool.in"
-  ),
-
-  title: {
-    default:
-      "OptimSkool | School ERP Software",
-    template:
-      "%s | OptimSkool",
-  },
+export const metadata = {
+  title:
+    "OptimSkool | School ERP Software India",
 
   description:
-    "School ERP software for attendance, fee management, examinations, student records and administration.",
+    "OptimSkool is an all-in-one school ERP software and LMS platform for educational institutions. Manage attendance, fees, academics, payroll, transport and communication from one dashboard.",
 
   keywords: [
     "school ERP software",
-    "attendance management system",
-    "fee management system",
-    "exam management system",
-    "student management system",
+    "school management software",
+    "school ERP software India",
+    "school ERP",
+    "LMS for schools",
+    "school management system",
+    "education ERP",
   ],
 
-  robots: {
-    index: true,
-    follow: true,
+  metadataBase: new URL(
+    "https://optimskool.com"
+  ),
+
+  openGraph: {
+    title:
+      "OptimSkool School ERP",
+
+    description:
+      "Smart School ERP Software for Modern Institutions.",
+
+    url:
+      "https://optimskool.com",
+
+    siteName:
+      "OptimSkool",
+
+    images: [
+      {
+        url:
+          "/images/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+
+    type: "website",
   },
 };
 
