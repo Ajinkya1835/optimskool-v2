@@ -377,7 +377,7 @@ export default function SchoolERPPage() {
 
           </div>
         </section>
-        ```tsx
+        
         {/* COMPARISON */}
         <section className="bg-white py-28">
 
@@ -503,4 +503,3 @@ export default function SchoolERPPage() {
     </>
   );
 }
-```
