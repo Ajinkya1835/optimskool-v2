@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 type SEOProps = {
   title: string;
@@ -6,7 +6,8 @@ type SEOProps = {
   path: string;
 };
 
-const SITE_URL = "https://optimskool.in";
+export const SITE_URL = "https://optimskool.com";
+export const OG_IMAGE = "/images/og-image.png";
 
 export function generateMetadata({
   title,
@@ -26,15 +27,24 @@ export function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${SITE_URL}${path}`,
+      url: path,
       siteName: "OptimSkool",
       type: "website",
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "OptimSkool Complete School ERP Software",
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [OG_IMAGE],
     },
   };
 }

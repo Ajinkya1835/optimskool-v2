@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Automate payroll processing, salary management, deductions and payslip generation with OptimSkool Payroll Management System.",
   // ✅ Fixed: matches actual folder /payroll-management
-  alternates: { canonical: "/payroll-management" },
+  alternates: { canonical: "/payroll-management-system" },
 };
 
 const features = [

@@ -7,7 +7,18 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+type FAQProps = {
+  title?: string;
+  description?: string;
+  faqs?: FAQItem[];
+};
+
+const defaultFaqs: FAQItem[] = [
   {
     question:
       "Can schools manage results digitally?",
@@ -40,7 +51,11 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function FAQ({
+  title = "Frequently Asked Questions",
+  description = "Learn more about OptimSkool and school ERP workflows.",
+  faqs = defaultFaqs,
+}: FAQProps) {
   return (
     <section className="bg-slate-50 py-24">
       <div className="mx-auto max-w-4xl px-6">
@@ -52,12 +67,11 @@ export default function FAQ() {
           </span>
 
           <h2 className="mt-6 text-4xl font-bold text-slate-900">
-            Frequently Asked Questions
+            {title}
           </h2>
 
           <p className="mt-4 text-lg text-slate-600">
-            Learn more about OptimSkool
-            and school ERP workflows.
+            {description}
           </p>
         </div>
 

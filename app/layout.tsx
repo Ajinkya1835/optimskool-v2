@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     "education ERP",
   ],
 
-  metadataBase: new URL("https://optimskool.com"),
+  metadataBase: new URL(SITE_URL),
 
   alternates: {
     canonical: "/",
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OptimSkool School ERP",
     description: "Smart School ERP Software for Modern Institutions.",
-    url: "https://optimskool.com",
+    url: SITE_URL,
     siteName: "OptimSkool",
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630 }],
     type: "website",
   },
 
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OptimSkool | School ERP Software India",
     description: "Smart School ERP Software for Modern Institutions.",
-    images: ["/images/og-image.png"],
+    images: [OG_IMAGE],
   },
 };
 
@@ -47,7 +48,7 @@ const jsonLd = {
   name: "OptimSkool",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
-  url: "https://optimskool.com",
+  url: SITE_URL,
   description:
     "All-in-one school ERP software and LMS platform for educational institutions in India.",
   offers: {
@@ -58,7 +59,7 @@ const jsonLd = {
   publisher: {
     "@type": "Organization",
     name: "OptimSkool",
-    url: "https://optimskool.com",
+    url: SITE_URL,
   },
 };
 

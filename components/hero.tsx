@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const modules = [
@@ -85,10 +86,14 @@ export default function Hero() {
             <div className="h-3 w-3 rounded-full bg-green-400" />
           </div>
 
-          <img
+          <Image
             src="/images/dashboard-preview.png"
             alt="OptimSkool Dashboard"
-            className="rounded-[30px] border border-slate-200"
+            width={1600}
+            height={900}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+            className="h-auto w-full rounded-[30px] border border-slate-200"
           />
         </div>
       </div>

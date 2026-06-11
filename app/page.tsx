@@ -3,6 +3,7 @@ import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Image from "next/image";
 import Link from "next/link";
 
 const modules = [
@@ -16,7 +17,7 @@ const modules = [
   },
   {
     title: "Admissions",
-    href: "/school-erp-software",
+    href: "/admission-management",
   },
   {
     title: "Examinations",
@@ -24,19 +25,19 @@ const modules = [
   },
   {
     title: "Certificates",
-    href: "/school-erp-software",
+    href: "/certificate-management-system",
   },
   {
     title: "Reports & Analytics",
-    href: "/school-erp-software",
+    href: "/reports-analytics",
   },
   {
     title: "Payroll & Payslips",
-    href: "/school-erp-software",
+    href: "/payroll-management-system",
   },
   {
     title: "Inventory",
-    href: "/school-erp-software",
+    href: "/inventory-management-system",
   },
   {
     title: "Broadcast",
@@ -44,7 +45,7 @@ const modules = [
   },
   {
     title: "Leave Management",
-    href: "/school-erp-software",
+    href: "/leave-management-system",
   },
   {
     title: "Class Management",
@@ -139,10 +140,13 @@ export default function HomePage() {
 
             <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
 
-              <img
+              <Image
                 src="/images/analytics-preview.png"
                 alt="OptimSkool Analytics"
-                className="rounded-[30px] w-full"
+                width={1600}
+                height={900}
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="h-auto w-full rounded-[30px]"
               />
             </div>
           </div>
@@ -237,10 +241,13 @@ export default function HomePage() {
 
             <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
 
-              <img
+              <Image
                 src="/images/dashboard-preview.png"
                 alt="OptimSkool Dashboard"
-                className="rounded-[30px] w-full"
+                width={1600}
+                height={900}
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="h-auto w-full rounded-[30px]"
               />
             </div>
           </div>

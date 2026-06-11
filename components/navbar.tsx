@@ -3,12 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   const [scrolled, setScrolled] =
     useState(false);
+  const [menuOpen, setMenuOpen] =
+    useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,13 +93,61 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          className="rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
-        >
-          Request Demo
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="rounded-2xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-700 sm:px-5"
+          >
+            Request Demo
+          </Link>
+
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 lg:hidden"
+          >
+            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
+        </div>
       </nav>
+
+      {menuOpen && (
+        <div
+          id="mobile-navigation"
+          className="border-t border-slate-200 bg-white px-6 py-5 shadow-lg lg:hidden"
+        >
+          <div className="mx-auto flex max-w-7xl flex-col gap-2">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`rounded-xl px-4 py-3 text-sm font-medium ${
+                  pathname === link.href
+                    ? "bg-blue-50 text-blue-700"
+                    : "text-slate-700 hover:bg-slate-50"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              href="/features"
+              className="rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              All Features
+            </Link>
+            <Link
+              href="/pricing"
+              className="rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              Pricing
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

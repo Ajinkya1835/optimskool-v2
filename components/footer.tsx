@@ -133,15 +133,15 @@ export default function Footer() {
 
             <div className="flex gap-8">
 
-              <Link href="#">
+              <Link href="/privacy-policy">
                 Privacy Policy
               </Link>
 
-              <Link href="#">
+              <Link href="/terms-of-service">
                 Terms of Service
               </Link>
 
-              <Link href="#">
+              <Link href="/cookie-policy">
                 Cookie Policy
               </Link>
 
