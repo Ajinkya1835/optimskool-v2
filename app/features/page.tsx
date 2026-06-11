@@ -22,7 +22,7 @@ const features = [
   { title: "Result Management", href: "/result-management-system" },
   { title: "Student Management", href: "/student-management-system" },
   { title: "Reports & Analytics", href: "/reports-analytics" },
-  { title: "Payroll Management", href: "/payroll-management" },
+  { title: "Payroll Management", href: "/payroll-management-system" },
   { title: "Inventory Management", href: "/inventory-management-system" },
   { title: "Leave Management", href: "/leave-management-system" },
   { title: "Certificate Management", href: "/certificate-management-system" },
