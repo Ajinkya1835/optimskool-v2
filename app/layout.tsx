@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title:
-    "OptimSkool | School ERP Software India",
+"OptimSkool | School ERP Software India & LMS Platform",
 
   description:
     "OptimSkool is an all-in-one school ERP software and LMS platform for educational institutions. Manage attendance, fees, academics, payroll, transport and communication from one dashboard.",
@@ -24,7 +24,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "OptimSkool School ERP",
+"OptimSkool | School ERP Software India & LMS Platform",
 
     description:
       "Smart School ERP Software for Modern Institutions.",
