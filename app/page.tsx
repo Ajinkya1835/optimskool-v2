@@ -245,6 +245,46 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        {/* Product Demo Video */}
+<section className="bg-white py-24">
+  <div className="mx-auto max-w-6xl px-6">
+
+    <div className="text-center">
+      <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
+        Product Demo
+      </span>
+
+      <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
+        See OptimSkool
+        in Action
+      </h2>
+
+      <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600">
+        Watch how OptimSkool helps schools manage
+        attendance, fee collection, examinations,
+        payroll, academics and communication —
+        all from one smart dashboard.
+      </p>
+    </div>
+
+    <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-4 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
+
+      <video
+        className="w-full rounded-[32px]"
+        controls
+        preload="metadata"
+      >
+        <source
+          src="/videos/optimskool-demo.mp4"
+          type="video/mp4"
+        />
+        Your browser does not
+        support the video tag.
+      </video>
+
+    </div>
+  </div>
+</section>
 
         <FAQ />
         <FinalCTA />

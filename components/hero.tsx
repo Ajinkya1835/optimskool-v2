@@ -80,9 +80,9 @@ export default function Hero() {
         <div className="overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.15)]">
 
           <div className="mb-4 flex gap-2">
-            <div className="h-3 w-3 rounded-full bg-red-300" />
-            <div className="h-3 w-3 rounded-full bg-yellow-300" />
-            <div className="h-3 w-3 rounded-full bg-green-300" />
+            <div className="h-3 w-3 rounded-full bg-red-400" />
+            <div className="h-3 w-3 rounded-full bg-yellow-400" />
+            <div className="h-3 w-3 rounded-full bg-green-400" />
           </div>
 
           <img

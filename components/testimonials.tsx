@@ -45,7 +45,7 @@ export default function Testimonials() {
                   {item.name}
                 </h4>
 
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-600">
                   {item.role}
                 </p>
               </div>

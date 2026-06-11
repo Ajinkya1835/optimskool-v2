@@ -87,7 +87,7 @@ export default function Footer() {
             <div className="mt-8 space-y-8 text-slate-300">
 
               <div>
-                <p className="text-sm uppercase tracking-wide text-slate-400">
+                <p className="text-sm uppercase tracking-wide text-slate-300">
                   Email
                 </p>
 
@@ -97,7 +97,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="text-sm uppercase tracking-wide text-slate-400">
+                <p className="text-sm uppercase tracking-wide text-slate-300">
                   Phone
                 </p>
 
@@ -107,7 +107,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="text-sm uppercase tracking-wide text-slate-400">
+                <p className="text-sm uppercase tracking-wide text-slate-300">
                   Support
                 </p>
 
@@ -124,7 +124,7 @@ export default function Footer() {
         {/* BOTTOM */}
         <div className="mt-20 border-t border-slate-800 pt-10">
 
-          <div className="flex flex-col items-center justify-between gap-5 text-center text-slate-400 md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-5 text-center text-slate-300 md:flex-row">
 
             <p>
               © 2026 OptimSkool.

@@ -9,7 +9,7 @@ export default function FinalCTA() {
 
         <div className="mx-auto max-w-5xl px-6 text-center">
 
-          <span className="rounded-full bg-white/10 px-5 py-2 text-sm font-medium text-blue-300">
+          <span className="rounded-full bg-white/10 px-5 py-2 text-sm font-medium text-blue-200">
             OptimSkool ERP
           </span>
 
@@ -61,7 +61,7 @@ export default function FinalCTA() {
               20+
             </h3>
 
-            <p className="mt-3 text-lg font-medium !text-white/90">
+            <p className="mt-3 text-lg font-medium text-white">
               Institutions Trust Us
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function FinalCTA() {
               99.9%
             </h3>
 
-            <p className="mt-3 text-lg font-medium !text-white/90">
+            <p className="mt-3 text-lg font-medium text-white">
               Uptime Guarantee
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function FinalCTA() {
               24/7
             </h3>
 
-            <p className="mt-3 text-lg font-medium !text-white/90">
+            <p className="mt-3 text-lg font-medium text-white">
               Support Available
             </p>
           </div>

@@ -147,7 +147,7 @@ export default function PricingPage() {
                 <p
                   className={`mt-3 text-sm ${
                     plan.popular
-                      ? "text-blue-100"
+                      ? "text-blue"
                       : "text-slate-500"
                   }`}
                 >
@@ -163,7 +163,7 @@ export default function PricingPage() {
                   <span
                     className={`pb-2 text-sm ${
                       plan.popular
-                        ? "text-blue-100"
+                        ? "text-blue"
                         : "text-slate-500"
                     }`}
                   >
