@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
 
 export const metadata: Metadata = {
-  title: "Admission Management",
+  title: "Admission Management System for Schools | OptimSkool India",
   description:
-    "Manage admission enquiries, student applications, admit cards and enrollment digitally.",
+    "Digitize school admissions with OptimSkool. Manage enquiries, applications, admit cards and student enrollment from one centralized admission management system.",
+  alternates: {
+    canonical: "/admission-management",
+  },
 };
 
 const features = [
@@ -48,10 +52,13 @@ export default function AdmissionPage() {
               </p>
             </div>
 
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-xl">
-              <img
+              <Image
                 src="/images/dashboard-preview.png"
-                alt="Admission Management"
+                alt="Admission Management System Dashboard"
+                width={800}
+                height={500}
                 className="rounded-[28px] w-full"
               />
             </div>
@@ -63,26 +70,48 @@ export default function AdmissionPage() {
           <div className="mx-auto max-w-7xl px-6">
 
             <h2 className="text-4xl font-bold text-slate-900">
-              Features
+              Admission Management Features
             </h2>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-
               {features.map((item) => (
                 <div
                   key={item}
                   className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm"
                 >
-                  <h3 className="font-semibold text-slate-900">
-                    {item}
-                  </h3>
+                  <h3 className="font-semibold text-slate-900">{item}</h3>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <FAQ />
+        <FAQ
+          title="Admission Management FAQs"
+          description="Common questions about OptimSkool's admission management system."
+          faqs={[
+            {
+              question: "How does OptimSkool handle admission enquiries?",
+              answer:
+                "OptimSkool centralizes all admission enquiries into a digital dashboard, allowing staff to track, respond and convert enquiries into applications efficiently.",
+            },
+            {
+              question: "Can admit cards be generated automatically?",
+              answer:
+                "Yes. OptimSkool generates admit cards digitally based on student enrollment and exam schedules.",
+            },
+            {
+              question: "Is the admission process paperless?",
+              answer:
+                "Yes. OptimSkool digitizes the entire admission workflow from enquiry to enrollment.",
+            },
+            {
+              question: "Can admission data be tracked in real time?",
+              answer:
+                "Yes. All applications, enrollment status and records are updated in real time across the platform.",
+            },
+          ]}
+        />
         <FinalCTA />
       </main>
 

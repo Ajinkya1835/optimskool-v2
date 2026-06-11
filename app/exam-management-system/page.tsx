@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
@@ -6,10 +7,8 @@ import FinalCTA from "@/components/final-cta";
 
 export const metadata: Metadata = {
   title: "Exam Management System",
-
   description:
     "Manage examinations, schedules, hall tickets, results and performance analytics with OptimSkool Exam Management System.",
-
   alternates: {
     canonical: "/exam-management-system",
   },
@@ -18,43 +17,35 @@ export const metadata: Metadata = {
 const features = [
   {
     title: "Exam Scheduling",
-    description:
-      "Create and organize mid-term, annual and custom examinations digitally.",
+    description: "Create and organize mid-term, annual and custom examinations digitally.",
   },
   {
     title: "Session-wise Exams",
-    description:
-      "Manage exams according to academic sessions and term structures.",
+    description: "Manage exams according to academic sessions and term structures.",
   },
   {
     title: "Exam Calendar",
-    description:
-      "Schedule exam start dates, deadlines and timelines efficiently.",
+    description: "Schedule exam start dates, deadlines and timelines efficiently.",
   },
   {
     title: "Publish / Unpublish Exams",
-    description:
-      "Control exam visibility instantly with publish status management.",
+    description: "Control exam visibility instantly with publish status management.",
   },
   {
     title: "Hall Ticket Generation",
-    description:
-      "Generate and manage exam hall tickets digitally.",
+    description: "Generate and manage exam hall tickets digitally.",
   },
   {
     title: "Timetable Management",
-    description:
-      "Organize exam schedules and subject-wise planning effortlessly.",
+    description: "Organize exam schedules and subject-wise planning effortlessly.",
   },
   {
     title: "Result Management",
-    description:
-      "Generate results, report cards and performance records centrally.",
+    description: "Generate results, report cards and performance records centrally.",
   },
   {
     title: "Marks & Analytics",
-    description:
-      "Track student academic performance with detailed analytics.",
+    description: "Track student academic performance with detailed analytics.",
   },
 ];
 
@@ -67,22 +58,10 @@ const workflow = [
 ];
 
 const stats = [
-  {
-    value: "100%",
-    label: "Digital Exam Workflow",
-  },
-  {
-    value: "24/7",
-    label: "Exam Access",
-  },
-  {
-    value: "Real-time",
-    label: "Exam Tracking",
-  },
-  {
-    value: "Instant",
-    label: "Result Processing",
-  },
+  { value: "100%", label: "Digital Exam Workflow" },
+  { value: "24/7", label: "Exam Access" },
+  { value: "Real-time", label: "Exam Tracking" },
+  { value: "Instant", label: "Result Processing" },
 ];
 
 export default function ExamManagementPage() {
@@ -108,16 +87,12 @@ export default function ExamManagementPage() {
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-                Create, schedule and manage examinations digitally with centralized exam planning, scheduling, hall tickets, results and performance tracking.
+                Create, schedule and manage examinations digitally with centralized exam planning,
+                scheduling, hall tickets, results and performance tracking.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                {[
-                  "Exam Scheduling",
-                  "Hall Tickets",
-                  "Timetable",
-                  "Results",
-                ].map((item) => (
+                {["Exam Scheduling", "Hall Tickets", "Timetable", "Results"].map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm"
@@ -128,10 +103,13 @@ export default function ExamManagementPage() {
               </div>
             </div>
 
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white p-3 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
-              <img
+              <Image
                 src="/images/exam-dashboard.png"
-                alt="OptimSkool Exam Dashboard"
+                alt="OptimSkool Exam Management Dashboard"
+                width={1200}
+                height={750}
                 className="w-full rounded-[28px]"
               />
             </div>
@@ -154,7 +132,8 @@ export default function ExamManagementPage() {
               </h2>
 
               <p className="mt-5 text-lg text-slate-600">
-                OptimSkool simplifies exam scheduling, hall ticket generation, result processing and academic tracking through one centralized ERP platform.
+                OptimSkool simplifies exam scheduling, hall ticket generation, result processing
+                and academic tracking through one centralized ERP platform.
               </p>
             </div>
 
@@ -167,10 +146,7 @@ export default function ExamManagementPage() {
                   <h3 className="text-lg font-bold text-slate-900 transition group-hover:text-blue-600">
                     {feature.title}
                   </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {feature.description}
-                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -203,10 +179,7 @@ export default function ExamManagementPage() {
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
                     {index + 1}
                   </div>
-
-                  <h3 className="mt-5 font-semibold text-slate-900">
-                    {step}
-                  </h3>
+                  <h3 className="mt-5 font-semibold text-slate-900">{step}</h3>
                 </div>
               ))}
             </div>
@@ -223,12 +196,12 @@ export default function ExamManagementPage() {
             </span>
 
             <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
-              Real-time Exam Scheduling &
-              Management
+              Real-time Exam Scheduling & Management
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg text-slate-600">
-              Monitor scheduled exams, academic sessions, publishing status and timelines from one centralized examination dashboard.
+              Monitor scheduled exams, academic sessions, publishing status and timelines
+              from one centralized examination dashboard.
             </p>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -237,21 +210,19 @@ export default function ExamManagementPage() {
                   key={stat.label}
                   className="rounded-[28px] border border-slate-200 bg-slate-50 p-8"
                 >
-                  <h3 className="text-3xl font-black text-blue-600">
-                    {stat.value}
-                  </h3>
-
-                  <p className="mt-2 text-slate-600">
-                    {stat.label}
-                  </p>
+                  <h3 className="text-3xl font-black text-blue-600">{stat.value}</h3>
+                  <p className="mt-2 text-slate-600">{stat.label}</p>
                 </div>
               ))}
             </div>
 
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-slate-50 p-6 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-              <img
+              <Image
                 src="/images/exam-dashboard.png"
-                alt="Exam Dashboard"
+                alt="Exam Management Analytics Dashboard"
+                width={1600}
+                height={900}
                 className="w-full rounded-[28px]"
               />
             </div>

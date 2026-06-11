@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
@@ -6,10 +7,8 @@ import FinalCTA from "@/components/final-cta";
 
 export const metadata: Metadata = {
   title: "Certificate Management System",
-
   description:
     "Generate migration, transfer, character certificates and student documents instantly with OptimSkool Certificate Management System.",
-
   alternates: {
     canonical: "/certificate-management-system",
   },
@@ -67,22 +66,10 @@ const workflow = [
 ];
 
 const stats = [
-  {
-    value: "100%",
-    label: "Digital Documentation",
-  },
-  {
-    value: "Instant",
-    label: "Certificate Creation",
-  },
-  {
-    value: "Real-time",
-    label: "Student Verification",
-  },
-  {
-    value: "24/7",
-    label: "Document Access",
-  },
+  { value: "100%", label: "Digital Documentation" },
+  { value: "Instant", label: "Certificate Creation" },
+  { value: "Real-time", label: "Student Verification" },
+  { value: "24/7", label: "Document Access" },
 ];
 
 export default function CertificateManagementPage() {
@@ -94,11 +81,9 @@ export default function CertificateManagementPage() {
 
         {/* HERO */}
         <section className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-purple-50 py-20 lg:py-28">
-
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.95fr_1.2fr]">
 
             <div>
-
               <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
                 Certificate Management System
               </span>
@@ -133,17 +118,17 @@ export default function CertificateManagementPage() {
                   </span>
                 ))}
               </div>
-
             </div>
 
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white p-3 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
-
-              <img
+              <Image
                 src="/images/certificate-dashboard.png"
-                alt="Certificate Dashboard"
+                alt="Certificate Management Dashboard"
+                width={1200}
+                height={750}
                 className="w-full rounded-[30px]"
               />
-
             </div>
 
           </div>
@@ -154,7 +139,6 @@ export default function CertificateManagementPage() {
           <div className="mx-auto max-w-7xl px-6">
 
             <div className="max-w-3xl">
-
               <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
                 Certificate Features
               </span>
@@ -172,11 +156,9 @@ export default function CertificateManagementPage() {
                 and official school paperwork
                 through one centralized ERP platform.
               </p>
-
             </div>
 
             <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-
               {features.map((feature) => (
                 <div
                   key={feature.title}
@@ -185,14 +167,13 @@ export default function CertificateManagementPage() {
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-violet-600">
                     {feature.title}
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     {feature.description}
                   </p>
                 </div>
               ))}
-
             </div>
+
           </div>
         </section>
 
@@ -213,7 +194,6 @@ export default function CertificateManagementPage() {
             </p>
 
             <div className="mt-16 grid gap-8 md:grid-cols-3 lg:grid-cols-5">
-
               {workflow.map((step, index) => (
                 <div
                   key={step}
@@ -222,14 +202,11 @@ export default function CertificateManagementPage() {
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-violet-500 text-lg font-bold text-white">
                     {index + 1}
                   </div>
-
-                  <h3 className="mt-5 font-semibold text-slate-900">
-                    {step}
-                  </h3>
+                  <h3 className="mt-5 font-semibold text-slate-900">{step}</h3>
                 </div>
               ))}
-
             </div>
+
           </div>
         </section>
 
@@ -254,32 +231,26 @@ export default function CertificateManagementPage() {
             </p>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-
               {stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm"
                 >
-                  <h3 className="text-3xl font-black text-violet-600">
-                    {stat.value}
-                  </h3>
-
-                  <p className="mt-2 text-slate-600">
-                    {stat.label}
-                  </p>
+                  <h3 className="text-3xl font-black text-violet-600">{stat.value}</h3>
+                  <p className="mt-2 text-slate-600">{stat.label}</p>
                 </div>
               ))}
-
             </div>
 
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-4 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-
-              <img
+              <Image
                 src="/images/certificate-dashboard.png"
-                alt="Certificate Dashboard"
+                alt="Certificate Management Analytics Dashboard"
+                width={1600}
+                height={900}
                 className="w-full rounded-[30px]"
               />
-
             </div>
 
           </div>
@@ -290,32 +261,25 @@ export default function CertificateManagementPage() {
           description="Learn more about certificate and student document workflows."
           faqs={[
             {
-              question:
-                "Can schools generate certificates digitally?",
+              question: "Can schools generate certificates digitally?",
               answer:
                 "Yes, schools can generate migration, transfer and character certificates digitally.",
             },
             {
-              question:
-                "Can student details be verified before printing?",
+              question: "Can student details be verified before printing?",
               answer:
                 "Yes, OptimSkool allows quick student verification before certificate creation.",
             },
             {
-              question:
-                "Can certificates be printed instantly?",
-              answer:
-                "Yes, documents are print-ready and downloadable instantly.",
+              question: "Can certificates be printed instantly?",
+              answer: "Yes, documents are print-ready and downloadable instantly.",
             },
             {
-              question:
-                "Can schools track certificate history?",
-              answer:
-                "Yes, certificate records and document history are stored centrally.",
+              question: "Can schools track certificate history?",
+              answer: "Yes, certificate records and document history are stored centrally.",
             },
             {
-              question:
-                "Does OptimSkool support multiple certificate types?",
+              question: "Does OptimSkool support multiple certificate types?",
               answer:
                 "Yes, schools can manage transfer, migration and character certificates efficiently.",
             },

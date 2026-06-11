@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
@@ -8,64 +9,50 @@ export const metadata: Metadata = {
   title: "Attendance Management System",
   description:
     "Track student and staff attendance with analytics, leave management and attendance calendar.",
+  // ✅ Added canonical
+  alternates: {
+    canonical: "/attendance-management-system",
+  },
 };
 
 const features = [
   {
     icon: "📅",
     title: "Attendance Calendar",
-    desc:
-      "Monitor monthly attendance through a structured calendar system.",
+    desc: "Monitor monthly attendance through a structured calendar system.",
   },
   {
     icon: "✅",
     title: "Present / Absent Tracking",
-    desc:
-      "Track attendance instantly with centralized monitoring.",
+    desc: "Track attendance instantly with centralized monitoring.",
   },
   {
     icon: "⏰",
     title: "Late Attendance Monitoring",
-    desc:
-      "Identify late attendance patterns efficiently.",
+    desc: "Identify late attendance patterns efficiently.",
   },
   {
     icon: "📝",
     title: "Half Day & Leave Tracking",
-    desc:
-      "Manage leaves and attendance exceptions.",
+    desc: "Manage leaves and attendance exceptions.",
   },
   {
     icon: "🎉",
     title: "Holiday Management",
-    desc:
-      "Automatically configure holidays and weekends.",
+    desc: "Automatically configure holidays and weekends.",
   },
   {
     icon: "📊",
     title: "Attendance Reports",
-    desc:
-      "Generate monthly reports and attendance analytics.",
+    desc: "Generate monthly reports and attendance analytics.",
   },
 ];
 
 const stats = [
-  {
-    number: "99%",
-    label: "Attendance Accuracy",
-  },
-  {
-    number: "24/7",
-    label: "Monitoring",
-  },
-  {
-    number: "Real-time",
-    label: "Attendance Updates",
-  },
-  {
-    number: "Monthly",
-    label: "Attendance Reports",
-  },
+  { number: "99%", label: "Attendance Accuracy" },
+  { number: "24/7", label: "Monitoring" },
+  { number: "Real-time", label: "Attendance Updates" },
+  { number: "Monthly", label: "Attendance Reports" },
 ];
 
 export default function AttendancePage() {
@@ -84,7 +71,6 @@ export default function AttendancePage() {
 
             {/* LEFT */}
             <div>
-
               <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
                 Attendance Management
               </span>
@@ -120,15 +106,15 @@ export default function AttendancePage() {
                   </div>
                 ))}
               </div>
-
             </div>
 
-            {/* RIGHT IMAGE */}
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="overflow-hidden rounded-[44px] border border-slate-200 bg-gradient-to-br from-white to-slate-100 p-3 shadow-[0_40px_120px_rgba(15,23,42,0.12)] ring-1 ring-slate-200">
-
-              <img
+              <Image
                 src="/images/attendance-dashboard.png"
-                alt="Attendance Dashboard"
+                alt="Attendance Management Dashboard"
+                width={1200}
+                height={750}
                 className="w-full rounded-[40px]"
               />
             </div>
@@ -138,11 +124,9 @@ export default function AttendancePage() {
 
         {/* FEATURES */}
         <section className="bg-slate-50 py-20">
-
           <div className="mx-auto max-w-7xl px-6">
 
             <div className="max-w-3xl">
-
               <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
                 Attendance Features
               </span>
@@ -160,27 +144,17 @@ export default function AttendancePage() {
                 teachers and
                 administration teams.
               </p>
-
             </div>
 
             <div className="mt-16 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-
               {features.map((item) => (
                 <div
                   key={item.title}
                   className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="text-3xl">
-                    {item.icon}
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-semibold text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-7 text-slate-600">
-                    {item.desc}
-                  </p>
+                  <div className="text-3xl">{item.icon}</div>
+                  <h3 className="mt-5 text-xl font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-600">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -190,18 +164,15 @@ export default function AttendancePage() {
 
         {/* WORKFLOW */}
         <section className="bg-white py-20">
-
           <div className="mx-auto max-w-7xl px-6">
 
             <div className="text-center">
-
               <span className="rounded-full bg-green-50 px-4 py-2 text-sm font-medium text-green-700">
                 Attendance Workflow
               </span>
 
               <h2 className="mt-6 text-5xl font-bold text-slate-950">
-                Simple Attendance
-                Workflow
+                Simple Attendance Workflow
               </h2>
 
               <p className="mt-5 text-lg text-slate-600">
@@ -211,11 +182,9 @@ export default function AttendancePage() {
                 through one centralized
                 workflow.
               </p>
-
             </div>
 
             <div className="mt-16 grid gap-6 lg:grid-cols-4">
-
               {[
                 "Mark Attendance",
                 "Track Calendar",
@@ -229,10 +198,7 @@ export default function AttendancePage() {
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
                     {index + 1}
                   </div>
-
-                  <h3 className="mt-6 text-xl font-semibold text-slate-900">
-                    {step}
-                  </h3>
+                  <h3 className="mt-6 text-xl font-semibold text-slate-900">{step}</h3>
                 </div>
               ))}
             </div>
@@ -242,11 +208,9 @@ export default function AttendancePage() {
 
         {/* DASHBOARD */}
         <section className="bg-slate-50 py-20">
-
           <div className="mx-auto max-w-7xl px-6">
 
             <div className="max-w-3xl">
-
               <span className="rounded-full bg-green-50 px-4 py-2 text-sm font-medium text-green-700">
                 Attendance Dashboard
               </span>
@@ -266,28 +230,24 @@ export default function AttendancePage() {
             </div>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-
               {stats.map((item) => (
                 <div
                   key={item.label}
                   className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm"
                 >
-                  <h3 className="text-4xl font-bold text-blue-600">
-                    {item.number}
-                  </h3>
-
-                  <p className="mt-3 text-slate-600">
-                    {item.label}
-                  </p>
+                  <h3 className="text-4xl font-bold text-blue-600">{item.number}</h3>
+                  <p className="mt-3 text-slate-600">{item.label}</p>
                 </div>
               ))}
             </div>
 
+            {/* ✅ Replaced <img> with <Image> */}
             <div className="mt-14 overflow-hidden rounded-[44px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-
-              <img
+              <Image
                 src="/images/attendance-dashboard.png"
-                alt="Attendance Analytics"
+                alt="Attendance Analytics Dashboard"
+                width={1600}
+                height={900}
                 className="w-full rounded-[32px]"
               />
             </div>
