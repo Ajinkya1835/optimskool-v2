@@ -1,301 +1,174 @@
+/* app/page.tsx */
+
+import type { Metadata } from "next";
+
 import Hero from "@/components/hero";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import Image from "next/image";
-import Link from "next/link";
 
-const modules = [
-  {
-    title: "Fee Management",
-    href: "/fee-management-system",
-  },
-  {
-    title: "Attendance Analytics",
-    href: "/attendance-management-system",
-  },
-  {
-    title: "Admissions",
-    href: "/admission-management",
-  },
-  {
-    title: "Examinations",
-    href: "/exam-management-system",
-  },
-  {
-    title: "Certificates",
-    href: "/certificate-management-system",
-  },
-  {
-    title: "Reports & Analytics",
-    href: "/reports-analytics",
-  },
-  {
-    title: "Payroll & Payslips",
-    href: "/payroll-management-system",
-  },
-  {
-    title: "Inventory",
-    href: "/inventory-management-system",
-  },
-  {
-    title: "Broadcast",
-    href: "/school-erp-software",
-  },
-  {
-    title: "Leave Management",
-    href: "/leave-management-system",
-  },
-  {
-    title: "Class Management",
-    href: "/school-erp-software",
-  },
-  {
-    title: "Curriculum",
-    href: "/school-erp-software",
-  },
-];
+import Problems from "@/components/problems";
+import ModulesGrid from "@/components/modules-grid";
+import WhyOptimSkool from "@/components/why-optimskool";
+import VideoTour from "@/components/video-tour";
+import ProductShowcase from "@/components/product-showcase";
+import TrustStrip from "@/components/trust-strip";
+
+import { generateMetadata } from "@/lib/seo";
+
+export const metadata: Metadata =
+  generateMetadata({
+    title:
+      "Best School ERP Software in India | School Management System | OptimSkool",
+
+    description:
+      "OptimSkool is an all-in-one School ERP Software in India for attendance, fees, payroll, admissions, examinations, transport and school management.",
+
+    path: "/",
+
+    keywords: [
+      "school ERP software",
+      "school ERP software India",
+      "best school ERP software",
+      "school management system",
+      "school LMS software",
+      "education ERP software",
+      "attendance management system",
+      "fee management system",
+    ],
+  });
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-white">
-
-        {/* HERO */}
+      <main className="overflow-hidden bg-[#070B14]">
         <Hero />
 
-        {/* Problems Section */}
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        <TrustStrip />
 
-            <div className="max-w-3xl">
-              <span className="rounded-full bg-red-50 px-4 py-2 text-sm font-medium text-red-700">
-                Challenges Schools Face
-              </span>
+        <Problems />
 
-              <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-                School Management
-                Shouldn’t Be Complicated
-              </h2>
+        <ProductShowcase />
 
-              <p className="mt-5 text-lg text-slate-600">
-                Schools often struggle
-                with attendance tracking,
-                fee collection,
-                examinations and
-                centralized student
-                records.
-              </p>
-            </div>
+        <ModulesGrid />
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <WhyOptimSkool />
 
-              {[
-                "Manual Attendance Tracking",
-                "Fee Collection Complexity",
-                "Examination Management",
-                "Student Record Handling",
-                "Payroll & Salary Tracking",
-                "Paper-based Administration",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[32px] border border-slate-200 bg-slate-50 p-8 transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <h3 className="font-semibold text-slate-900">
-                    {item}
-                  </h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <VideoTour />
 
-        {/* ERP Showcase */}
-        <section className="py-24">
-          <div className="mx-auto max-w-7xl px-6">
-
-            <div className="max-w-3xl">
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-                Centralized Platform
-              </span>
-
-              <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-                One Platform for
-                Complete School
-                Management
-              </h2>
-
-              <p className="mt-5 text-lg text-slate-600">
-                OptimSkool centralizes
-                attendance, fees,
-                examinations, payroll,
-                inventory and student
-                management into one ERP.
-              </p>
-            </div>
-
-            <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-
-              <Image
-                src="/images/analytics-preview.png"
-                alt="OptimSkool Analytics"
-                width={1600}
-                height={900}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                className="h-auto w-full rounded-[30px]"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Modules */}
-        <section className="bg-slate-50 py-24">
-          <div className="mx-auto max-w-7xl px-6">
-
-            <div className="max-w-3xl">
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-                ERP Modules
-              </span>
-
-              <h2 className="mt-6 text-4xl font-bold text-slate-900">
-                Everything Your
-                Institution Needs,
-                All in One Place
-              </h2>
-            </div>
-
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-
-              {modules.map((module) => (
-                <Link
-                  key={module.title}
-                  href={module.href}
-                  className="group rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <h3 className="font-semibold text-slate-900 transition group-hover:text-blue-600">
-                    {module.title}
-                  </h3>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why OptimSkool */}
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
-
+        {/* SEO CONTENT */}
+        <section className="bg-white py-28">
+          <div className="mx-auto max-w-5xl px-6">
             <div className="text-center">
-              <span className="rounded-full bg-green-50 px-4 py-2 text-sm font-medium text-green-700">
-                Why OptimSkool
+              <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                School ERP Software
               </span>
 
-              <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-                Why Schools Choose
-                OptimSkool
+              <h2 className="mt-8 text-5xl font-black tracking-[-0.04em] text-slate-900 lg:text-6xl">
+                Why Schools Need
+                <br />
+                ERP Software
               </h2>
             </div>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 space-y-7 text-lg leading-9 text-slate-500">
+              <p>
+                Schools today face
+                increasing administrative
+                complexity. Managing
+                attendance, admissions,
+                examinations, payroll,
+                fee collection and parent
+                communication manually
+                creates delays and
+                operational inefficiencies.
+              </p>
 
-              {[
-                "Centralized ERP Platform",
-                "Real-time Reports",
-                "Attendance Analytics",
-                "Fee Management",
-                "Payroll Management",
-                "Paperless Operations",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[32px] border border-slate-200 bg-slate-50 p-8 text-center transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <h3 className="font-semibold text-slate-900">
-                    {item}
-                  </h3>
-                </div>
-              ))}
+              <p>
+                OptimSkool is a modern
+                <strong className="text-slate-900">
+                  {" "}
+                  school ERP software
+                </strong>{" "}
+                built for schools,
+                colleges and educational
+                institutions across India.
+                The platform centralizes
+                attendance tracking,
+                student management,
+                payroll, fee collection,
+                examinations and
+                communication into one
+                intelligent dashboard.
+              </p>
+
+              <p>
+                With cloud-based access,
+                automated workflows and
+                real-time reports,
+                institutions can reduce
+                paperwork, improve staff
+                productivity and manage
+                academic operations more
+                efficiently. Schools using
+                ERP systems experience
+                better administration,
+                faster communication and
+                improved transparency.
+              </p>
+
+              <p>
+                Whether you need
+                attendance management,
+                online fee collection,
+                payroll automation,
+                transport management or
+                digital examination
+                workflows, OptimSkool
+                helps institutions
+                streamline operations
+                through one centralized
+                ERP platform.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Dashboard Showcase */}
-        <section className="bg-slate-50 py-24">
-          <div className="mx-auto max-w-7xl px-6">
-
-            <div className="max-w-3xl">
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-                Dashboard Analytics
-              </span>
-
-              <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-                Real-time School
-                Analytics &
-                Operations Dashboard
-              </h2>
-            </div>
-
-            <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-
-              <Image
-                src="/images/dashboard-preview.png"
-                alt="OptimSkool Dashboard"
-                width={1600}
-                height={900}
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                className="h-auto w-full rounded-[30px]"
-              />
-            </div>
-          </div>
-        </section>
-        {/* Product Demo Video */}
-<section className="bg-white py-24">
-  <div className="mx-auto max-w-6xl px-6">
-
-    <div className="text-center">
-      <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-        Product Demo
-      </span>
-
-      <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-        See OptimSkool
-        in Action
-      </h2>
-
-      <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600">
-        Watch how OptimSkool helps schools manage
-        attendance, fee collection, examinations,
-        payroll, academics and communication —
-        all from one smart dashboard.
-      </p>
-    </div>
-
-    <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-4 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-
-      <video
-        className="w-full rounded-[32px]"
-        controls
-        preload="metadata"
-      >
-        <source
-          src="/videos/optimskool-demo.mp4"
-          type="video/mp4"
+        <FAQ
+          title="School ERP Software FAQs"
+          description="Everything schools ask before switching to OptimSkool ERP."
+          faqs={[
+            {
+              question:
+                "What is school ERP software?",
+              answer:
+                "School ERP software helps institutions manage attendance, fees, payroll, examinations, academics and administration through one centralized platform.",
+            },
+            {
+              question:
+                "Can OptimSkool manage attendance and fee collection?",
+              answer:
+                "Yes, OptimSkool centralizes attendance tracking, fee collection, reporting and administrative workflows.",
+            },
+            {
+              question:
+                "Is OptimSkool suitable for Indian schools?",
+              answer:
+                "Yes, OptimSkool is specifically designed for Indian schools, institutions and educational organizations.",
+            },
+            {
+              question:
+                "Does OptimSkool include payroll and admissions?",
+              answer:
+                "Yes, schools can manage payroll, admissions, attendance, examinations and communication through one ERP dashboard.",
+            },
+          ]}
         />
-        Your browser does not
-        support the video tag.
-      </video>
 
-    </div>
-  </div>
-</section>
-
-        <FAQ />
         <FinalCTA />
-
       </main>
 
       <Footer />

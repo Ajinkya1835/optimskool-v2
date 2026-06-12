@@ -1,177 +1,281 @@
-import type { Metadata } from "next";
+/* app/fee-management-system/page.tsx */
+
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import type { Metadata } from "next";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Fee Management System",
-  description:
-    "Streamline fee collection, invoices, discounts, due management and financial reporting with OptimSkool Fee Management.",
-  // ✅ Added canonical
-  alternates: {
-    canonical: "/fee-management-system",
-  },
-};
+export const metadata: Metadata =
+  generateMetadata({
+    title:
+      "Fee Management System for Schools | OptimSkool",
 
-const features = [
-  { icon: "💳", title: "Fee Collection", desc: "Collect student fees digitally with centralized fee tracking and payment history." },
-  { icon: "🏫", title: "Fee Structures", desc: "Create class-wise and grade-wise fee structures with complete flexibility." },
-  { icon: "🎓", title: "Admission Fees", desc: "Manage admission fees, registration charges and onboarding payments." },
-  { icon: "🚌", title: "Transport & Hostel Fees", desc: "Track transport, hostel and additional service charges separately." },
-  { icon: "🏷️", title: "Discount Management", desc: "Apply fee discounts and custom templates based on school requirements." },
-  { icon: "📄", title: "Invoice & Receipt Generation", desc: "Generate payment receipts instantly with export and print support." },
-  { icon: "⏳", title: "Previous Due Collection", desc: "Track unpaid fees and previous academic session dues efficiently." },
-  { icon: "📊", title: "Financial Reports", desc: "Generate detailed reports for fee collection, dues and classroom billing." },
-];
+    description:
+      "Automate school fee collection, invoices, reminders and payment tracking using OptimSkool Fee Management System for schools.",
 
-const stats = [
-  { number: "100%", label: "Transparent Billing" },
-  { number: "Instant", label: "Receipt Generation" },
-  { number: "Real-time", label: "Payment Tracking" },
-  { number: "24/7", label: "Financial Monitoring" },
-];
+    path:
+      "/fee-management-system",
 
-const workflow = [
-  { title: "Create Structure", desc: "Set grade-wise fee structures" },
-  { title: "Collect Fees", desc: "Track payments digitally" },
-  { title: "Generate Receipt", desc: "Instant invoice generation" },
-  { title: "Financial Reports", desc: "View fee analytics" },
-];
-
+    keywords: [
+      "fee management system",
+      "school fee management software",
+      "online fee collection system",
+      "school fee software",
+      "digital fee management",
+      "school payment system",
+    ],
+  });
 export default function FeeManagementPage() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-white">
+      <main className="overflow-hidden bg-white text-slate-900">
+        <BreadcrumbSchema
+  items={[
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name:
+        "Fee Management System",
+      path:
+        "/fee-management-system",
+    },
+  ]}
+/>
 
         {/* HERO */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-white to-slate-100 py-24">
-          <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-emerald-200/30 blur-[120px]" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white pt-44 pb-28">
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[0.85fr_1.45fr]">
-            <div>
-              <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
+          <div className="absolute inset-0 bg-grid opacity-40" />
+
+          {/* glows */}
+          <div className="absolute left-1/2 -top-20 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-200/35 blur-[120px]" />
+          <div className="absolute right-0 top-40 h-[350px] w-[400px] rounded-full bg-cyan-200/25 blur-[100px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
+            <div className="max-w-4xl">
+
+              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
                 Fee Management System
-              </span>
+              </div>
 
-              <h1 className="mt-7 text-5xl font-bold tracking-tight text-slate-950 lg:text-7xl">
-                Smart Fees, Billing & Financial Accounting
+              <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-slate-900 lg:text-7xl">
+                Simplify School
+                Fee Collection
               </h1>
 
-              <p className="mt-7 text-lg leading-8 text-slate-600">
-                Streamline fee collection, automate billing, manage admission fees, discounts,
-                transport and hostel charges while maintaining complete financial transparency
-                through one centralized fee management system.
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-500 lg:text-xl">
+                Automate reminders, track
+                payments and manage school
+                fees through one intelligent
+                ERP platform.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-3">
-                {["Fee Collection", "Discount Management", "Invoice Generation", "Financial Reports"].map((item) => (
-                  <div key={item} className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm">
-                    {item}
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:brightness-105 hover:shadow-[0_8px_40px_rgba(6,182,212,0.45)]"
+                >
+                  Request Demo
+                </Link>
+
+                <Link
+                  href="/pricing"
+                  className="rounded-full border border-blue-200 bg-white px-8 py-4 font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50"
+                >
+                  View Pricing
+                </Link>
+
+              </div>
+
+              <div className="mt-12 flex flex-wrap gap-4">
+
+                {[
+                  "Online Payments",
+                  "Auto Reminders",
+                  "Payment Reports",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-medium text-slate-600 shadow-sm"
+                  >
+                    ✓ {item}
                   </div>
                 ))}
+
               </div>
+
             </div>
 
-            {/* ✅ Replaced <img> with <Image> */}
-            <div className="overflow-hidden rounded-[44px] border border-slate-200 bg-white p-2 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-              <Image
-                src="/images/fee-collection-dashboard.png"
-                alt="Fee Management Dashboard"
-                width={1400}
-                height={900}
-                className="w-full rounded-[42px]"
-              />
+            {/* Dashboard */}
+            <div className="relative mt-20">
+
+              <div className="absolute left-1/2 top-1/2 h-[380px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/20 blur-[120px]" />
+
+              <div className="relative overflow-hidden rounded-[42px] border border-blue-100 bg-white p-3 shadow-[0_40px_120px_rgba(37,99,235,0.15),0_0_0_1px_rgba(59,130,246,0.08)]">
+
+                <div className="mb-3 flex items-center gap-2 border-b border-slate-100 px-2 pb-3">
+
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-green-400" />
+
+                  <div className="ml-4 rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-medium text-blue-600">
+                    Fee Dashboard
+                  </div>
+
+                </div>
+
+                <Image
+                  src="/images/fee-report-dashboard.png"
+                  alt="Fee Dashboard"
+                  width={1600}
+                  height={900}
+                  className="w-full rounded-[28px]"
+                />
+
+              </div>
+
             </div>
+
           </div>
         </section>
 
         {/* FEATURES */}
-        <section className="bg-slate-50 py-20">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24">
+
+          <div className="absolute left-0 top-0 h-[350px] w-[350px] rounded-full bg-blue-200/20 blur-[120px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
             <div className="max-w-3xl">
-              <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">Fee Features</span>
-              <h2 className="mt-6 text-5xl font-bold tracking-tight text-slate-950">Everything Needed for Smart Fee Management</h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                OptimSkool simplifies fee collection, discounts, receipts, financial accounting and reporting through one centralized ERP system.
+
+              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Smart Fee Collection
+              </div>
+
+              <h2 className="mt-6 text-4xl font-black tracking-tight text-slate-900 lg:text-6xl">
+                Everything Needed
+                for Fee
+                Management
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
+                Simplify fee collection,
+                automate invoices and
+                manage school payments
+                efficiently.
               </p>
+
             </div>
 
-            <div className="mt-16 grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-              {features.map((item) => (
-                <div key={item.title} className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="text-3xl">{item.icon}</div>
-                  <h3 className="mt-5 text-xl font-semibold text-slate-900">{item.title}</h3>
-                  <p className="mt-4 leading-7 text-slate-600">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+            <div className="mt-16 grid gap-6 lg:grid-cols-12">
 
-        {/* WORKFLOW */}
-        <section className="bg-white py-20">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center">
-              <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">Fee Workflow</span>
-              <h2 className="mt-6 text-5xl font-bold text-slate-950">Simple Financial Management Workflow</h2>
-              <p className="mt-5 text-lg text-slate-600">
-                Manage fee structures, collect payments, generate invoices and financial reports through one centralized system.
-              </p>
-            </div>
+              {/* Left Big Card */}
+              <div className="relative overflow-hidden rounded-[40px] border border-blue-100 bg-white p-8 shadow-[0_20px_60px_rgba(37,99,235,0.08)] lg:col-span-5">
 
-            <div className="mt-16 grid gap-6 lg:grid-cols-4">
-              {workflow.map((step, index) => (
-                <div key={step.title} className="rounded-[32px] border border-slate-200 bg-slate-50 p-8 text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-lg font-bold text-white">
-                    {index + 1}
+                <div className="absolute right-0 top-0 h-52 w-52 rounded-full bg-blue-200/20 blur-[100px]" />
+
+                <div className="relative">
+
+                  <div className="rounded-[24px] border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-4 w-fit shadow-sm">
+                    <p className="text-3xl">
+                      🏛️
+                    </p>
                   </div>
-                  <h3 className="mt-6 text-lg font-semibold text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-sm text-slate-500">{step.desc}</p>
+
+                  <h3 className="mt-8 text-4xl font-black text-slate-900">
+                    Smart Fee
+                    Collection
+                  </h3>
+
+                  <p className="mt-5 text-lg leading-8 text-slate-500">
+                    Track payments, manage
+                    dues and automate
+                    reminders effortlessly.
+                  </p>
+
+                  <div className="mt-10 flex flex-wrap gap-3">
+
+                    {[
+                      "Invoices",
+                      "Payments",
+                      "Reports",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-slate-600"
+                      >
+                        {item}
+                      </div>
+                    ))}
+
+                  </div>
+
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
 
-        {/* REPORTING */}
-        <section className="bg-slate-50 py-20">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="max-w-3xl">
-              <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">Financial Reports</span>
-              <h2 className="mt-6 text-5xl font-bold text-slate-950">Transparent Fee Reporting & Financial Tracking</h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                Access student fee reports, previous dues, classroom fee reports, payment history and downloadable receipts with full transparency.
-              </p>
+              {/* Right Cards */}
+              <div className="grid gap-6 lg:col-span-7 lg:grid-cols-2">
+
+                {[
+                  {
+                    title: "Auto Reminders",
+                    desc:
+                      "Send automated payment reminders instantly.",
+                  },
+                  {
+                    title: "Payment Reports",
+                    desc:
+                      "Track school fee collections and dues.",
+                  },
+                  {
+                    title: "Invoices",
+                    desc:
+                      "Generate digital invoices automatically.",
+                  },
+                  {
+                    title: "Online Payments",
+                    desc:
+                      "Enable secure digital fee payments.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[32px] border border-blue-100 bg-white p-7 shadow-[0_14px_50px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-blue-200"
+                  >
+
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-slate-500">
+                      {item.desc}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {stats.map((item) => (
-                <div key={item.label} className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-4xl font-bold text-emerald-600">{item.number}</h3>
-                  <p className="mt-3 text-slate-600">{item.label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* ✅ Replaced <img> with <Image> */}
-            <div className="mt-14 overflow-hidden rounded-[44px] border border-slate-200 bg-white p-5 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-              <Image
-                src="/images/fee-report-dashboard.png"
-                alt="Fee Financial Reports Dashboard"
-                width={1600}
-                height={900}
-                className="w-full rounded-[32px] object-cover"
-              />
-            </div>
           </div>
         </section>
 
         <FAQ />
-        <FinalCTA />
+        
+
       </main>
 
       <Footer />

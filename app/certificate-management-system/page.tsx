@@ -1,292 +1,250 @@
-import type { Metadata } from "next";
+/* app/certificate-management-system/page.tsx */
+
 import Image from "next/image";
+import Link from "next/link";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
-
-export const metadata: Metadata = {
-  title: "Certificate Management System",
-  description:
-    "Generate migration, transfer, character certificates and student documents instantly with OptimSkool Certificate Management System.",
-  alternates: {
-    canonical: "/certificate-management-system",
-  },
-};
-
-const features = [
-  {
-    title: "Migration Certificate",
-    description:
-      "Generate migration certificates digitally with student details and institution verification.",
-  },
-  {
-    title: "Character Certificate",
-    description:
-      "Create conduct and character certificates instantly with customizable remarks.",
-  },
-  {
-    title: "Transfer Certificate",
-    description:
-      "Manage transfer certificates and student leaving records efficiently.",
-  },
-  {
-    title: "Student Verification",
-    description:
-      "Quickly search and verify student information before certificate generation.",
-  },
-  {
-    title: "Document Templates",
-    description:
-      "Use standardized templates for official school documents and certificates.",
-  },
-  {
-    title: "Printable PDFs",
-    description:
-      "Generate print-ready documents with downloadable PDF support.",
-  },
-  {
-    title: "Certificate History",
-    description:
-      "Track issued certificates and maintain centralized student document records.",
-  },
-  {
-    title: "Digital Record Keeping",
-    description:
-      "Store and manage certificates securely from one ERP dashboard.",
-  },
-];
-
-const workflow = [
-  "Search Student",
-  "Select Certificate",
-  "Fill Details",
-  "Generate Document",
-  "Print / Download",
-];
-
-const stats = [
-  { value: "100%", label: "Digital Documentation" },
-  { value: "Instant", label: "Certificate Creation" },
-  { value: "Real-time", label: "Student Verification" },
-  { value: "24/7", label: "Document Access" },
-];
 
 export default function CertificateManagementPage() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-white">
+      <main className="overflow-hidden bg-white text-slate-900">
 
         {/* HERO */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-purple-50 py-20 lg:py-28">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.95fr_1.2fr]">
+        <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white pt-44 pb-28">
 
-            <div>
-              <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
+          <div className="absolute inset-0 bg-grid opacity-40" />
+
+          {/* Glows */}
+          <div className="absolute left-1/2 -top-20 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-200/35 blur-[120px]" />
+          <div className="absolute right-0 top-40 h-[350px] w-[400px] rounded-full bg-cyan-200/25 blur-[100px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
+            <div className="max-w-5xl">
+
+              <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
                 Certificate Management System
               </span>
 
-              <h1 className="mt-6 text-5xl font-black tracking-tight text-slate-900 lg:text-7xl">
-                Smart Certificate &
-                Student Document
-                Management
+              <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-slate-900 lg:text-7xl">
+                Digital Certificate
+                Management For
+                Schools
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-500 lg:text-xl">
                 Generate migration,
-                transfer and character
-                certificates digitally with
-                centralized document workflows,
-                student verification and
-                print-ready records.
+                transfer, bonafide and
+                character certificates
+                instantly through one
+                centralized ERP platform.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                {[
-                  "Migration Certificate",
-                  "Transfer Certificate",
-                  "Character Certificate",
-                  "Printable Documents",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm"
-                  >
-                    {item}
-                  </span>
-                ))}
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:brightness-105 hover:shadow-[0_8px_40px_rgba(6,182,212,0.45)]"
+                >
+                  Request Demo
+                </Link>
+
+                <Link
+                  href="/pricing"
+                  className="rounded-full border border-blue-200 bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50"
+                >
+                  View Pricing
+                </Link>
+
               </div>
+
+              <div className="mt-12 flex flex-wrap gap-4">
+
+                {[
+                  "Digital Certificates",
+                  "Auto Generation",
+                  "Student Records",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-medium text-slate-600 shadow-sm"
+                  >
+                    ✓ {item}
+                  </div>
+                ))}
+
+              </div>
+
             </div>
 
-            {/* ✅ Replaced <img> with <Image> */}
-            <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white p-3 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
-              <Image
-                src="/images/certificate-dashboard.png"
-                alt="Certificate Management Dashboard"
-                width={1200}
-                height={750}
-                className="w-full rounded-[30px]"
-              />
+            {/* Dashboard */}
+            <div className="relative mt-20">
+
+              <div className="absolute left-1/2 top-1/2 h-[380px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/20 blur-[120px]" />
+
+              <div className="relative overflow-hidden rounded-[42px] border border-blue-100 bg-white p-3 shadow-[0_40px_120px_rgba(37,99,235,0.15),0_0_0_1px_rgba(59,130,246,0.08)]">
+
+                <div className="mb-3 flex items-center gap-2 border-b border-slate-100 px-2 pb-3">
+
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-green-400" />
+
+                  <div className="ml-4 rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-medium text-blue-600">
+                    Certificate Dashboard
+                  </div>
+
+                </div>
+
+                <Image
+                  src="/images/certificate-dashboard.png"
+                  alt="Certificate Management Dashboard"
+                  width={1400}
+                  height={900}
+                  className="w-full rounded-[28px]"
+                  priority
+                />
+
+              </div>
+
             </div>
 
           </div>
         </section>
 
         {/* FEATURES */}
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24">
+
+          <div className="absolute right-0 top-0 h-[350px] w-[350px] rounded-full bg-blue-200/20 blur-[120px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
 
             <div className="max-w-3xl">
-              <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
-                Certificate Features
-              </span>
 
-              <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
-                Everything Needed for
-                Smart Certificate
+              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Smart Certificate Features
+              </div>
+
+              <h2 className="mt-6 text-4xl font-black tracking-tight text-slate-900 lg:text-6xl">
+                Everything Needed
+                For Certificate
                 Management
               </h2>
 
-              <p className="mt-5 text-lg text-slate-600">
-                OptimSkool simplifies
-                certificate generation,
-                student document tracking
-                and official school paperwork
-                through one centralized ERP platform.
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
+                Eliminate paperwork,
+                automate document creation
+                and instantly generate
+                student certificates.
               </p>
+
             </div>
 
-            <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="group rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-violet-200 hover:shadow-[0_20px_60px_rgba(139,92,246,0.12)]"
-                >
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-violet-600">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <div className="mt-16 grid gap-6 lg:grid-cols-12">
 
-          </div>
-        </section>
+              {/* Left Big Card */}
+              <div className="relative overflow-hidden rounded-[40px] border border-blue-100 bg-white p-8 shadow-[0_20px_60px_rgba(37,99,235,0.08)] lg:col-span-5">
 
-        {/* WORKFLOW */}
-        <section className="bg-slate-50 py-24">
-          <div className="mx-auto max-w-7xl px-6 text-center">
+                <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-blue-200/20 blur-[100px]" />
 
-            <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
-              Certificate Workflow
-            </span>
+                <div className="relative">
 
-            <h2 className="mt-6 text-4xl font-black text-slate-900">
-              Simple Certificate Generation Workflow
-            </h2>
-
-            <p className="mt-4 text-lg text-slate-600">
-              Generate official school certificates digitally.
-            </p>
-
-            <div className="mt-16 grid gap-8 md:grid-cols-3 lg:grid-cols-5">
-              {workflow.map((step, index) => (
-                <div
-                  key={step}
-                  className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-violet-500 text-lg font-bold text-white">
-                    {index + 1}
+                  <div className="rounded-[24px] border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-4 w-fit shadow-sm">
+                    <p className="text-3xl">
+                      📜
+                    </p>
                   </div>
-                  <h3 className="mt-5 font-semibold text-slate-900">{step}</h3>
+
+                  <h3 className="mt-8 text-4xl font-black text-slate-900">
+                    Smarter
+                    Certificate
+                    Processing
+                  </h3>
+
+                  <p className="mt-5 text-lg leading-8 text-slate-500">
+                    Generate transfer,
+                    migration, bonafide and
+                    student certificates
+                    instantly.
+                  </p>
+
+                  <div className="mt-10 flex flex-wrap gap-3">
+
+                    {[
+                      "Transfer",
+                      "Migration",
+                      "Bonafide",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-slate-600"
+                      >
+                        {item}
+                      </div>
+                    ))}
+
+                  </div>
+
                 </div>
-              ))}
+              </div>
+
+              {/* Right Cards */}
+              <div className="grid gap-6 lg:col-span-7 lg:grid-cols-2">
+
+                {[
+                  {
+                    title: "Auto Certificates",
+                    desc:
+                      "Generate certificates instantly.",
+                  },
+                  {
+                    title: "Student Records",
+                    desc:
+                      "Integrated with student profiles.",
+                  },
+                  {
+                    title: "Digital Documents",
+                    desc:
+                      "Reduce manual paperwork.",
+                  },
+                  {
+                    title: "Fast Processing",
+                    desc:
+                      "Issue certificates in seconds.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[32px] border border-blue-100 bg-white p-7 shadow-[0_14px_50px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-blue-200"
+                  >
+
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-slate-500">
+                      {item.desc}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
             </div>
 
           </div>
         </section>
 
-        {/* DASHBOARD */}
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        <FAQ />
+        
 
-            <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
-              Certificate Dashboard
-            </span>
-
-            <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
-              Real-time Certificate &
-              Student Document Tracking
-            </h2>
-
-            <p className="mt-5 max-w-3xl text-lg text-slate-600">
-              Monitor certificate generation,
-              student records, document history
-              and printable files from one
-              centralized dashboard.
-            </p>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm"
-                >
-                  <h3 className="text-3xl font-black text-violet-600">{stat.value}</h3>
-                  <p className="mt-2 text-slate-600">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* ✅ Replaced <img> with <Image> */}
-            <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-4 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-              <Image
-                src="/images/certificate-dashboard.png"
-                alt="Certificate Management Analytics Dashboard"
-                width={1600}
-                height={900}
-                className="w-full rounded-[30px]"
-              />
-            </div>
-
-          </div>
-        </section>
-
-        <FAQ
-          title="Frequently Asked Questions"
-          description="Learn more about certificate and student document workflows."
-          faqs={[
-            {
-              question: "Can schools generate certificates digitally?",
-              answer:
-                "Yes, schools can generate migration, transfer and character certificates digitally.",
-            },
-            {
-              question: "Can student details be verified before printing?",
-              answer:
-                "Yes, OptimSkool allows quick student verification before certificate creation.",
-            },
-            {
-              question: "Can certificates be printed instantly?",
-              answer: "Yes, documents are print-ready and downloadable instantly.",
-            },
-            {
-              question: "Can schools track certificate history?",
-              answer: "Yes, certificate records and document history are stored centrally.",
-            },
-            {
-              question: "Does OptimSkool support multiple certificate types?",
-              answer:
-                "Yes, schools can manage transfer, migration and character certificates efficiently.",
-            },
-          ]}
-        />
-
-        <FinalCTA />
       </main>
 
       <Footer />

@@ -1,118 +1,271 @@
-import type { Metadata } from "next";
+/* app/admission-management/page.tsx */
+
 import Image from "next/image";
+import Link from "next/link";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
+import type { Metadata } from "next";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Admission Management System for Schools | OptimSkool India",
-  description:
-    "Digitize school admissions with OptimSkool. Manage enquiries, applications, admit cards and student enrollment from one centralized admission management system.",
-  alternates: {
-    canonical: "/admission-management",
-  },
-};
+export const metadata: Metadata =
+  generateMetadata({
+    title:
+      "Admission Management System for Schools | OptimSkool",
 
-const features = [
-  "Admission Enquiries",
-  "Student Applications",
-  "Admit Cards",
-  "Application Tracking",
-  "Student Enrollment",
-  "Centralized Records",
-];
+    description:
+      "Digitize admissions, applications and enrollment workflows using OptimSkool Admission Management System.",
 
-export default function AdmissionPage() {
+    path:
+      "/admission-management",
+
+    keywords: [
+      "admission management system",
+      "school admission software",
+      "student enrollment software",
+      "online admission system",
+      "school admissions management",
+    ],
+  });
+
+export default function AdmissionManagementPage() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-white">
+      <main className="overflow-hidden bg-white text-slate-900">
 
         {/* HERO */}
-        <section className="bg-gradient-to-b from-slate-50 to-white py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+        <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white pt-44 pb-28">
 
-            <div>
-              <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
-                Admission Management
+          <div className="absolute inset-0 bg-grid opacity-40" />
+
+          {/* Glows */}
+          <div className="absolute left-1/2 -top-20 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-200/35 blur-[120px]" />
+          <div className="absolute right-0 top-40 h-[350px] w-[400px] rounded-full bg-cyan-200/25 blur-[100px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
+            <div className="max-w-5xl">
+
+              <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Admission Management System
               </span>
 
-              <h1 className="mt-6 text-5xl font-bold text-slate-900">
-                Admission Management
-                System for Schools
+              <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-slate-900 lg:text-7xl">
+                Smarter Student
+                Admission
+                Management
               </h1>
 
-              <p className="mt-6 text-lg text-slate-600">
-                Manage admission enquiries,
-                student applications,
-                admit cards and enrollment
-                through one centralized system.
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-500 lg:text-xl">
+                Simplify student admissions,
+                streamline enrollment,
+                manage applications and
+                digitize the entire admission
+                process through one ERP.
               </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:brightness-105 hover:shadow-[0_8px_40px_rgba(6,182,212,0.45)]"
+                >
+                  Request Demo
+                </Link>
+
+                <Link
+                  href="/pricing"
+                  className="rounded-full border border-blue-200 bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50"
+                >
+                  View Pricing
+                </Link>
+
+              </div>
+
+              <div className="mt-12 flex flex-wrap gap-4 text-sm font-medium">
+
+                {[
+                  "Online Admissions",
+                  "Application Tracking",
+                  "Student Enrollment",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-blue-100 bg-white px-5 py-3 text-slate-600 shadow-sm"
+                  >
+                    ✓ {item}
+                  </div>
+                ))}
+
+              </div>
+
             </div>
 
-            {/* ✅ Replaced <img> with <Image> */}
-            <div className="overflow-hidden rounded-[40px] border border-slate-200 bg-white p-5 shadow-xl">
-              <Image
-                src="/images/dashboard-preview.png"
-                alt="Admission Management System Dashboard"
-                width={800}
-                height={500}
-                className="rounded-[28px] w-full"
-              />
+            {/* Dashboard */}
+            <div className="relative mt-20">
+
+              <div className="absolute left-1/2 top-1/2 h-[380px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/20 blur-[120px]" />
+
+              <div className="relative overflow-hidden rounded-[42px] border border-blue-100 bg-white p-3 shadow-[0_40px_120px_rgba(37,99,235,0.15),0_0_0_1px_rgba(59,130,246,0.08)]">
+
+                <div className="mb-3 flex items-center gap-2 border-b border-slate-100 px-2 pb-3">
+
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-green-400" />
+
+                  <div className="ml-4 rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-medium text-blue-600">
+                    Admission Dashboard
+                  </div>
+
+                </div>
+
+                <Image
+                  src="/images/admission.png"
+                  alt="Admission Dashboard"
+                  width={1400}
+                  height={900}
+                  className="w-full rounded-[28px]"
+                  priority
+                />
+
+              </div>
+
             </div>
+
           </div>
         </section>
 
         {/* FEATURES */}
-        <section className="bg-slate-50 py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24">
 
-            <h2 className="text-4xl font-bold text-slate-900">
-              Admission Management Features
-            </h2>
+          <div className="absolute right-0 top-0 h-[350px] w-[350px] rounded-full bg-blue-200/20 blur-[120px]" />
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {features.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm"
-                >
-                  <h3 className="font-semibold text-slate-900">{item}</h3>
-                </div>
-              ))}
+          <div className="relative mx-auto max-w-7xl px-6">
+
+            <div className="max-w-3xl">
+
+              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Smart Admission Features
+              </div>
+
+              <h2 className="mt-6 text-4xl font-black tracking-tight text-slate-900 lg:text-6xl">
+                Everything Needed
+                For Student
+                Admissions
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
+                Digitize admission workflows,
+                reduce paperwork and
+                streamline student
+                enrollment efficiently.
+              </p>
+
             </div>
+
+            <div className="mt-16 grid gap-6 lg:grid-cols-12">
+
+              {/* Left Big Card */}
+              <div className="relative overflow-hidden rounded-[40px] border border-blue-100 bg-white p-8 shadow-[0_20px_60px_rgba(37,99,235,0.08)] lg:col-span-5">
+
+                <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-blue-200/20 blur-[100px]" />
+
+                <div className="relative">
+
+                  <div className="rounded-[24px] border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-4 w-fit shadow-sm">
+                    <p className="text-3xl">
+                      🎓
+                    </p>
+                  </div>
+
+                  <h3 className="mt-8 text-4xl font-black text-slate-900">
+                    Smarter
+                    Admissions
+                  </h3>
+
+                  <p className="mt-5 text-lg leading-8 text-slate-500">
+                    Manage student
+                    applications, admission
+                    approvals and enrollment
+                    through one platform.
+                  </p>
+
+                  <div className="mt-10 flex flex-wrap gap-3">
+
+                    {[
+                      "Applications",
+                      "Enrollment",
+                      "Student Records",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-slate-600"
+                      >
+                        {item}
+                      </div>
+                    ))}
+
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Right Cards */}
+              <div className="grid gap-6 lg:col-span-7 lg:grid-cols-2">
+
+                {[
+                  {
+                    title: "Online Admissions",
+                    desc:
+                      "Accept applications digitally.",
+                  },
+                  {
+                    title: "Student Enrollment",
+                    desc:
+                      "Manage onboarding workflows.",
+                  },
+                  {
+                    title: "Application Tracking",
+                    desc:
+                      "Track student application progress.",
+                  },
+                  {
+                    title: "Admission Reports",
+                    desc:
+                      "Analyze admission performance.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[32px] border border-blue-100 bg-white p-7 shadow-[0_14px_50px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-blue-200"
+                  >
+
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-slate-500">
+                      {item.desc}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+
           </div>
         </section>
 
-        <FAQ
-          title="Admission Management FAQs"
-          description="Common questions about OptimSkool's admission management system."
-          faqs={[
-            {
-              question: "How does OptimSkool handle admission enquiries?",
-              answer:
-                "OptimSkool centralizes all admission enquiries into a digital dashboard, allowing staff to track, respond and convert enquiries into applications efficiently.",
-            },
-            {
-              question: "Can admit cards be generated automatically?",
-              answer:
-                "Yes. OptimSkool generates admit cards digitally based on student enrollment and exam schedules.",
-            },
-            {
-              question: "Is the admission process paperless?",
-              answer:
-                "Yes. OptimSkool digitizes the entire admission workflow from enquiry to enrollment.",
-            },
-            {
-              question: "Can admission data be tracked in real time?",
-              answer:
-                "Yes. All applications, enrollment status and records are updated in real time across the platform.",
-            },
-          ]}
-        />
-        <FinalCTA />
+        <FAQ />
+        
+
       </main>
 
       <Footer />

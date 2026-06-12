@@ -1,152 +1,219 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#061327] text-white">
+    <footer className="relative overflow-hidden border-t border-slate-200 bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
+      {/* Glow */}
+      <div className="absolute left-1/2 top-0 h-[350px] w-[500px] -translate-x-1/2 rounded-full bg-blue-200/20 blur-[120px]" />
 
-      
+      <section className="relative mx-auto max-w-7xl px-6 py-16">
+        <div className="grid gap-12 lg:grid-cols-12">
+          {/* BRAND */}
+          <div className="lg:col-span-4">
+            <Link
+              href="/"
+              className="inline-flex items-center"
+            >
+              <Image
+                src="/logo-full2.png"
+                alt="OptimSkool School ERP"
+                width={300}
+                height={80}
+                priority
+                className="h-[72px] w-auto object-contain"
+              />
+            </Link>
 
-      {/* MAIN FOOTER */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-
-        <div className="grid gap-16 lg:grid-cols-3">
-
-          {/* LEFT */}
-          <div>
-
-            <h2 className="text-5xl font-bold">
-              Optim<span className="text-blue-500">
-                Skool
-              </span>
-            </h2>
-
-            <p className="mt-8 max-w-md text-lg leading-8 text-slate-300">
-              Empowering educational
-              institutions with
-              intelligent Smart
-              Education Platform
-              solutions.
+            <p className="mt-5 max-w-sm leading-8 text-slate-600">
+              OptimSkool is a
+              School ERP Software
+              in India designed to
+              simplify attendance,
+              academics, payroll,
+              admissions,
+              examinations and
+              fee management
+              through one
+              centralized platform.
             </p>
 
+            <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium text-slate-500">
+              <span>
+                ✓ Attendance
+              </span>
+
+              <span>
+                ✓ Fees
+              </span>
+
+              <span>
+                ✓ Payroll
+              </span>
+
+              <span>
+                ✓ Exams
+              </span>
+            </div>
           </div>
 
-          {/* PRODUCT LINKS */}
-          <div>
-
-            <h3 className="text-2xl font-semibold">
-              Product
+          {/* ERP MODULES */}
+          <div className="lg:col-span-3">
+            <h3 className="font-black text-slate-900">
+              ERP Modules
             </h3>
 
-            <div className="mt-8 flex flex-col gap-5 text-slate-300">
-
-              <Link
-                href="/features"
-                className="hover:text-white"
-              >
-                Features
-              </Link>
-
+            <div className="mt-5 flex flex-col gap-4 text-slate-600">
               <Link
                 href="/school-erp-software"
-                className="hover:text-white"
+                className="transition hover:text-blue-600"
               >
                 School ERP
               </Link>
 
               <Link
                 href="/attendance-management-system"
-                className="hover:text-white"
+                className="transition hover:text-blue-600"
               >
                 Attendance
+                Management
               </Link>
 
               <Link
                 href="/fee-management-system"
-                className="hover:text-white"
+                className="transition hover:text-blue-600"
               >
                 Fee Management
               </Link>
 
               <Link
                 href="/exam-management-system"
-                className="hover:text-white"
+                className="transition hover:text-blue-600"
               >
                 Exam Management
               </Link>
 
+              <Link
+                href="/result-management-system"
+                className="transition hover:text-blue-600"
+              >
+                Result Management
+              </Link>
+
+              <Link
+                href="/admission-management"
+                className="transition hover:text-blue-600"
+              >
+                Admission
+                Management
+              </Link>
+
+              <Link
+                href="/transport-management-system"
+                className="transition hover:text-blue-600"
+              >
+                Transport
+                Management
+              </Link>
+            </div>
+          </div>
+
+          {/* COMPANY */}
+          <div className="lg:col-span-2">
+            <h3 className="font-black text-slate-900">
+              Company
+            </h3>
+
+            <div className="mt-5 flex flex-col gap-4 text-slate-600">
+              <Link
+                href="/pricing"
+                className="transition hover:text-blue-600"
+              >
+                Pricing
+              </Link>
+
+              <Link
+                href="/contact"
+                className="transition hover:text-blue-600"
+              >
+                Contact
+              </Link>
+
+              <Link
+                href="/custom-school-erp-solutions"
+                className="transition hover:text-blue-600"
+              >
+                Custom ERP
+              </Link>
+
+              <Link
+                href="/privacy-policy"
+                className="transition hover:text-blue-600"
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                href="/terms-of-service"
+                className="transition hover:text-blue-600"
+              >
+                Terms Of Service
+              </Link>
             </div>
           </div>
 
           {/* CONTACT */}
-          <div>
-
-            <h3 className="text-2xl font-semibold">
+          <div className="lg:col-span-3">
+            <h3 className="font-black text-slate-900">
               Contact
             </h3>
 
-            <div className="mt-8 space-y-8 text-slate-300">
-
+            <div className="mt-5 space-y-5 text-slate-600">
               <div>
-                <p className="text-sm uppercase tracking-wide text-slate-300">
+                <p className="text-sm font-semibold text-slate-400">
                   Email
                 </p>
 
-                <p className="mt-2 text-lg text-white">
+                <p className="mt-1 font-medium">
                   sales@metagrad.in
                 </p>
               </div>
 
               <div>
-                <p className="text-sm uppercase tracking-wide text-slate-300">
+                <p className="text-sm font-semibold text-slate-400">
                   Phone
                 </p>
 
-                <p className="mt-2 text-lg text-white">
+                <p className="mt-1 font-medium">
                   +91 8102775670
                 </p>
               </div>
 
-              <div>
-                <p className="text-sm uppercase tracking-wide text-slate-300">
-                  Support
-                </p>
-
-                <p className="mt-2 text-lg text-white">
-                  support@metagrad.in
-                </p>
-              </div>
-
+              <Link
+                href="/contact"
+                className="inline-flex rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.20)] transition hover:brightness-105"
+              >
+                Request Demo
+              </Link>
             </div>
           </div>
-
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-20 border-t border-slate-800 pt-10">
-
-          <div className="flex flex-col items-center justify-between gap-5 text-center text-slate-300 md:flex-row">
-
+        {/* Bottom */}
+        <div className="mt-14 border-t border-slate-200 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-slate-500 lg:flex-row lg:text-left">
             <p>
-              © 2026 OptimSkool.
-              All rights reserved.
+              ©{" "}
+              {new Date().getFullYear()}{" "}
+              OptimSkool. All
+              rights reserved.
             </p>
 
-            <div className="flex gap-8">
-
-              <Link href="/privacy-policy">
-                Privacy Policy
-              </Link>
-
-              <Link href="/terms-of-service">
-                Terms of Service
-              </Link>
-
-              <Link href="/cookie-policy">
-                Cookie Policy
-              </Link>
-
-            </div>
-
+            <p>
+              School ERP Software
+              For Modern Schools
+              In India
+            </p>
           </div>
         </div>
       </section>

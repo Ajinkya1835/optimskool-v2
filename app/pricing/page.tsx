@@ -1,31 +1,44 @@
+/* app/pricing/page.tsx */
+
 import type { Metadata } from "next";
+import Link from "next/link";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FinalCTA from "@/components/final-cta";
 import FAQ from "@/components/faq";
-import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "School ERP Pricing",
+import { generateMetadata } from "@/lib/seo";
 
-  description:
-    "Affordable school ERP pricing based on student count and required features. Flexible monthly plans for schools of every size.",
+export const metadata: Metadata =
+  generateMetadata({
+    title:
+      "School ERP Pricing | OptimSkool",
 
-  alternates: {
-    canonical: "/pricing",
-  },
-};
+    description:
+      "Explore affordable pricing plans for OptimSkool School ERP Software including attendance, payroll, fees and examinations.",
+
+    path: "/pricing",
+
+    keywords: [
+      "school ERP pricing",
+      "school management software pricing",
+      "school ERP cost",
+      "school software pricing",
+      "ERP pricing for schools",
+    ],
+  });
+
+
 
 const plans = [
   {
     name: "Basic",
     price: "₹3",
     subtitle: "Per Student / Month",
-    description:
-      "Perfect for small schools starting digital transformation.",
-
     students: "Up to 500 Students",
-
+    description:
+      "Perfect for schools starting digital transformation.",
     features: [
       "Student Management",
       "Attendance Management",
@@ -36,18 +49,14 @@ const plans = [
       "Email Support",
     ],
   },
-
   {
     name: "Professional",
     price: "₹5",
     subtitle: "Per Student / Month",
-    description:
-      "Best for growing schools needing advanced ERP features.",
-
     students: "Up to 2,000 Students",
-
     popular: true,
-
+    description:
+      "Best for growing schools needing advanced ERP automation.",
     features: [
       "Everything in Basic",
       "Fee Management",
@@ -60,17 +69,13 @@ const plans = [
       "Multi Admin Access",
     ],
   },
-
   {
     name: "Enterprise",
     price: "Custom",
     subtitle: "Custom Pricing",
-
+    students: "Unlimited Students",
     description:
       "For institutions needing advanced workflows and custom ERP development.",
-
-    students: "Unlimited Students",
-
     features: [
       "All ERP Modules",
       "Unlimited Students",
@@ -90,127 +95,128 @@ export default function PricingPage() {
     <>
       <Navbar />
 
-      <main className="bg-white">
+      <main className="relative overflow-hidden bg-[linear-gradient(to_bottom,#f5f9ff,#ffffff)] text-slate-900">
+
+        {/* background */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#2563eb_1px,transparent_1px),linear-gradient(to_bottom,#2563eb_1px,transparent_1px)] bg-[size:56px_56px]" />
 
         {/* HERO */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-24 lg:py-32">
+        <section className="relative overflow-hidden pt-36 pb-16">
 
-          <div className="mx-auto max-w-7xl px-6 text-center">
+          <div className="absolute left-1/2 -top-28 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-blue-300/30 blur-[120px]" />
+          <div className="absolute right-0 top-24 h-[260px] w-[260px] rounded-full bg-cyan-300/20 blur-[100px]" />
 
-            <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
-              OptimSkool Pricing
+          <div className="relative mx-auto max-w-6xl px-6 text-center">
+
+            <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-4 py-1.5 text-xs font-semibold text-blue-700 shadow-sm backdrop-blur-xl">
+              ✨ OptimSkool Pricing
             </span>
 
-            <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-black tracking-tight text-slate-900 lg:text-7xl">
+            <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-black leading-[0.95] tracking-[-0.05em] lg:text-6xl">
+
               Affordable Pricing
-              <br />
-              For Every School
+
+              <span className="block bg-gradient-to-r from-blue-700 via-cyan-500 to-indigo-600 bg-clip-text text-transparent">
+                For Every School
+              </span>
+
             </h1>
 
-            <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-600">
-              Flexible pricing based on
-              student count, ERP features
-              and institution requirements.
-              Pay only for what your
-              school actually needs.
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 lg:text-lg">
+              Flexible school ERP pricing
+              based on student count and
+              institution requirements.
             </p>
 
           </div>
-
         </section>
 
-        {/* PRICING CARDS */}
-        <section className="bg-white py-24">
+        {/* PRICING */}
+        <section className="relative pb-20">
 
-          <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl gap-5 px-6 lg:grid-cols-3">
 
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-[40px] border p-10 shadow-sm transition hover:-translate-y-2 hover:shadow-xl ${
+                className={`group relative overflow-hidden rounded-[30px] border p-6 transition-all duration-300 hover:-translate-y-2 ${
                   plan.popular
-                    ? "border-blue-600 bg-blue-600 text-white"
-                    : "border-slate-200 bg-white"
+                    ? "scale-[1.02] border-cyan-200 bg-gradient-to-b from-cyan-50 via-blue-50 to-white shadow-[0_20px_60px_rgba(6,182,212,0.16)]"
+                    : "border-blue-100 bg-white/90 shadow-[0_12px_40px_rgba(37,99,235,0.08)] backdrop-blur-xl hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]"
                 }`}
               >
 
+                {/* pattern */}
+                <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:16px_16px]" />
+
+                {/* top border */}
+                <div className="absolute left-0 top-0 h-[4px] w-full bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-500" />
+
                 {plan.popular && (
-                  <div className="absolute right-6 top-6 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-600">
-                    Most Popular
+                  <div className="absolute right-4 top-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 text-[10px] font-bold text-white shadow-lg">
+                    POPULAR
                   </div>
                 )}
 
-                <h2 className="text-3xl font-black">
-                  {plan.name}
-                </h2>
+                <div className="relative">
 
-                <p
-                  className={`mt-3 text-sm ${
-                    plan.popular
-                      ? "text-blue"
-                      : "text-slate-500"
-                  }`}
-                >
-                  {plan.description}
-                </p>
+                  <h2 className="text-2xl font-black text-slate-900">
+                    {plan.name}
+                  </h2>
 
-                <div className="mt-8 flex items-end gap-2">
+                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                    {plan.description}
+                  </p>
 
-                  <span className="text-6xl font-black">
-                    {plan.price}
-                  </span>
+                  <div className="mt-6 flex items-end gap-2">
 
-                  <span
-                    className={`pb-2 text-sm ${
+                    <span className="bg-gradient-to-r from-slate-900 via-blue-700 to-cyan-500 bg-clip-text text-4xl font-black text-transparent">
+                      {plan.price}
+                    </span>
+
+                    <span className="pb-1 text-xs text-slate-400">
+                      {plan.subtitle}
+                    </span>
+
+                  </div>
+
+                  <div className="mt-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-3 text-xs font-semibold text-slate-700">
+                    {plan.students}
+                  </div>
+
+                  <div className="mt-5 space-y-3">
+
+                    {plan.features.map((feature) => (
+                      <div
+                        key={feature}
+                        className="flex items-center gap-3 rounded-xl border border-blue-100 bg-gradient-to-r from-white to-blue-50/60 px-3 py-3 shadow-sm transition duration-300 hover:border-cyan-200"
+                      >
+
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-xs font-bold text-green-600">
+                          ✓
+                        </span>
+
+                        <span className="text-sm font-medium text-slate-700">
+                          {feature}
+                        </span>
+
+                      </div>
+                    ))}
+
+                  </div>
+
+                  <Link
+                    href="/contact"
+                    className={`mt-6 flex justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-300 ${
                       plan.popular
-                        ? "text-blue"
-                        : "text-slate-500"
+                        ? "bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-500 text-white shadow-[0_10px_30px_rgba(37,99,235,0.24)] hover:scale-[1.01]"
+                        : "border border-blue-200 bg-white text-blue-700 shadow-sm hover:bg-blue-50"
                     }`}
                   >
-                    {plan.subtitle}
-                  </span>
+                    Request Demo
+                  </Link>
 
                 </div>
-
-                <div
-                  className={`mt-6 rounded-2xl px-5 py-4 text-sm font-medium ${
-                    plan.popular
-                      ? "bg-white/10 text-blue-50"
-                      : "bg-slate-100 text-slate-700"
-                  }`}
-                >
-                  {plan.students}
-                </div>
-
-                <div className="mt-8 space-y-4">
-
-                  {plan.features.map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="mt-1 text-lg">
-                        ✓
-                      </span>
-
-                      <span>
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-
-                </div>
-
-                <Link
-                  href="/contact"
-                  className={`mt-10 inline-flex w-full items-center justify-center rounded-2xl px-6 py-4 text-lg font-semibold transition ${
-                    plan.popular
-                      ? "bg-white text-blue-600 hover:bg-slate-100"
-                      : "bg-blue-600 text-white hover:bg-blue-700"
-                  }`}
-                >
-                  Request Demo
-                </Link>
 
               </div>
             ))}
@@ -219,73 +225,42 @@ export default function PricingPage() {
 
         </section>
 
-        {/* BILLING INFO */}
-        <section className="bg-slate-50 py-24">
+        {/* HOW BILLING WORKS */}
+        <section className="relative overflow-hidden py-16">
 
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="absolute left-0 top-0 h-[240px] w-[240px] rounded-full bg-blue-200/20 blur-[120px]" />
+          <div className="absolute right-0 bottom-0 h-[240px] w-[240px] rounded-full bg-cyan-200/20 blur-[120px]" />
+
+          <div className="relative mx-auto max-w-6xl px-6">
 
             <div className="text-center">
 
-              <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+              <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-4 py-1.5 text-xs font-semibold text-blue-700 shadow-sm backdrop-blur-xl">
                 Billing Information
               </span>
 
-              <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
-                How Billing Works
+              <h2 className="mt-5 text-3xl font-black text-slate-900 lg:text-5xl">
+                How Pricing Works
               </h2>
 
             </div>
 
-            <div className="mt-16 grid gap-6 lg:grid-cols-2">
+            <div className="mt-10 grid gap-4 lg:grid-cols-3">
 
               {[
-                {
-                  title:
-                    "Per Student Monthly Pricing",
-                  text:
-                    "Pricing is charged based on active student count and selected ERP plan.",
-                },
-                {
-                  title:
-                    "Feature-Based Access",
-                  text:
-                    "More features and higher student thresholds become available in advanced plans.",
-                },
-                {
-                  title:
-                    "Free Maintenance Included",
-                  text:
-                    "Bug fixes, maintenance, performance improvements and standard updates are included.",
-                },
-                {
-                  title:
-                    "Custom Feature Billing",
-                  text:
-                    "New modules, integrations, workflow changes or institution-specific requirements may involve additional charges.",
-                },
-                {
-                  title:
-                    "Month-End Billing",
-                  text:
-                    "Custom feature usage or advanced integrations may be billed monthly based on usage.",
-                },
-                {
-                  title:
-                    "Enterprise Flexibility",
-                  text:
-                    "Enterprise institutions can request custom pricing and bundled ERP solutions.",
-                },
+                "Pricing based on active student count",
+                "Choose only modules your school needs",
+                "Maintenance & updates included",
+                "Custom ERP features billed separately",
+                "Enterprise plans are fully flexible",
+                "Scale anytime as your school grows",
               ].map((item) => (
                 <div
-                  key={item.title}
-                  className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm"
+                  key={item}
+                  className="rounded-[24px] border border-blue-100 bg-gradient-to-b from-white to-blue-50/40 p-5 shadow-[0_10px_30px_rgba(37,99,235,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(37,99,235,0.14)]"
                 >
-                  <h3 className="text-xl font-bold text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 leading-8 text-slate-600">
-                    {item.text}
+                  <p className="text-sm font-semibold leading-6 text-slate-700">
+                    {item}
                   </p>
                 </div>
               ))}
@@ -293,46 +268,9 @@ export default function PricingPage() {
             </div>
 
           </div>
-
         </section>
 
-        <FAQ
-          title="Frequently Asked Questions"
-          description="Everything you need to know about OptimSkool pricing."
-          faqs={[
-            {
-              question:
-                "How is pricing calculated?",
-              answer:
-                "Pricing is based on active student count and selected ERP features.",
-            },
-            {
-              question:
-                "Are maintenance charges included?",
-              answer:
-                "Yes. Standard maintenance and updates are included in subscription pricing.",
-            },
-            {
-              question:
-                "Do custom features cost extra?",
-              answer:
-                "Yes. Institution-specific features, integrations or advanced modifications may involve additional charges.",
-            },
-            {
-              question:
-                "Can schools upgrade plans later?",
-              answer:
-                "Yes. Schools can upgrade plans and enable more ERP modules anytime.",
-            },
-            {
-              question:
-                "Is Enterprise pricing fixed?",
-              answer:
-                "No. Enterprise pricing depends on institution size and custom requirements.",
-            },
-          ]}
-        />
-
+        <FAQ />
         <FinalCTA />
       </main>
 

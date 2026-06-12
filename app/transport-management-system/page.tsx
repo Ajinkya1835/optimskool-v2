@@ -1,119 +1,274 @@
-import type { Metadata } from "next";
+/* app/transport-management-system/page.tsx */
+
 import Image from "next/image";
+import Link from "next/link";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
+import type { Metadata } from "next";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Transport Management System",
-  description: "Manage school buses, routes, stops and transport tracking with OptimSkool Transport Management System.",
-  alternates: { canonical: "/transport-management-system" },
-};
+export const metadata: Metadata =
+  generateMetadata({
+    title:
+      "Transport Management System for Schools | OptimSkool",
 
-const features = [
-  { title: "Bus Management", description: "Manage school buses, registration numbers and vehicle capacity from one dashboard." },
-  { title: "Route & Stop Management", description: "Create routes, bus stops and optimize student transport efficiently." },
-  { title: "Student Transport Tracking", description: "Assign students to buses and manage transport records digitally." },
-  { title: "Driver Management", description: "Maintain driver details, contact information and transport assignments." },
-  { title: "Transport Fee Tracking", description: "Track transport charges and fee collections efficiently." },
-  { title: "Bus Capacity Monitoring", description: "Monitor seating capacity and optimize transport allocation." },
-  { title: "Pickup & Drop Management", description: "Manage pickup points, drop locations and student safety workflows." },
-  { title: "Transport Reports", description: "Generate transport analytics and downloadable reports instantly." },
-];
-const workflow = ["Add Vehicle", "Create Route", "Assign Students", "Track Transport", "Generate Reports"];
-const stats = [
-  { value: "100%", label: "Transport Tracking" },
-  { value: "Instant", label: "Route Access" },
-  { value: "Real-time", label: "Bus Records" },
-  { value: "24/7", label: "Parent Visibility" },
-];
+    description:
+      "Track school buses, routes and student transport operations using OptimSkool Transport Management System.",
+
+    path:
+      "/transport-management-system",
+
+    keywords: [
+      "transport management system",
+      "school transport software",
+      "school bus tracking",
+      "student transport system",
+      "school bus management",
+    ],
+  });
 
 export default function TransportManagementPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white">
-        <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-cyan-50 py-20 lg:py-28">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.9fr_1.3fr]">
-            <div>
-              <span className="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">Transport Management System</span>
-              <h1 className="mt-6 text-5xl font-black tracking-tight text-slate-900 lg:text-7xl">Smart Transport & School Bus Management</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">Manage school buses, routes, stops, student transport allocation and driver records through one centralized transport management system.</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {["Bus Tracking", "Route Management", "Pickup & Drop Points", "Transport Reports"].map((item) => (
-                  <span key={item} className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm">{item}</span>
-                ))}
+
+      <main className="overflow-hidden bg-white text-slate-900">
+
+        {/* HERO */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white pt-44 pb-28">
+
+          <div className="absolute inset-0 bg-grid opacity-40" />
+
+          {/* glows */}
+          <div className="absolute left-1/2 -top-20 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-200/35 blur-[120px]" />
+          <div className="absolute right-0 top-40 h-[350px] w-[400px] rounded-full bg-cyan-200/25 blur-[100px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
+            <div className="max-w-5xl">
+
+              <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Transport Management System
+              </span>
+
+              <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-slate-900 lg:text-7xl">
+                Smart School
+                Transport
+                Management
+              </h1>
+
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-500 lg:text-xl">
+                Manage school buses,
+                routes, drivers, student
+                transport and tracking
+                through one centralized
+                ERP platform.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:brightness-105 hover:shadow-[0_8px_40px_rgba(6,182,212,0.45)]"
+                >
+                  Request Demo
+                </Link>
+
+                <Link
+                  href="/pricing"
+                  className="rounded-full border border-blue-200 bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50"
+                >
+                  View Pricing
+                </Link>
+
               </div>
+
+              <div className="mt-12 flex flex-wrap gap-4">
+
+                {[
+                  "Bus Tracking",
+                  "Route Management",
+                  "Transport Reports",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-medium text-slate-600 shadow-sm"
+                  >
+                    ✓ {item}
+                  </div>
+                ))}
+
+              </div>
+
             </div>
-            <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white p-3 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
-              <Image src="/images/transport-dashboard.png" alt="Transport Management Dashboard" width={1200} height={750} className="w-full rounded-[30px]" />
+
+            {/* Dashboard */}
+            <div className="relative mt-20">
+
+              <div className="absolute left-1/2 top-1/2 h-[380px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/20 blur-[120px]" />
+
+              <div className="relative overflow-hidden rounded-[42px] border border-blue-100 bg-white p-3 shadow-[0_40px_120px_rgba(37,99,235,0.15),0_0_0_1px_rgba(59,130,246,0.08)]">
+
+                <div className="mb-3 flex items-center gap-2 border-b border-slate-100 px-2 pb-3">
+
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-green-400" />
+
+                  <div className="ml-4 rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-medium text-blue-600">
+                    Transport Dashboard
+                  </div>
+
+                </div>
+
+                <Image
+                  src="/images/transport-dashboard.png"
+                  alt="Transport Management Dashboard"
+                  width={1400}
+                  height={900}
+                  className="w-full rounded-[28px]"
+                  priority
+                />
+
+              </div>
+
             </div>
+
           </div>
         </section>
 
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        {/* FEATURES */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24">
+
+          <div className="absolute right-0 top-0 h-[350px] w-[350px] rounded-full bg-blue-200/20 blur-[120px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
             <div className="max-w-3xl">
-              <span className="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">Transport Features</span>
-              <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">Everything Needed for Smart Transport Management</h2>
-              <p className="mt-5 text-lg text-slate-600">OptimSkool simplifies transport tracking, route management, student allocation and transport reporting through one centralized ERP platform.</p>
+
+              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Smart Transport Features
+              </div>
+
+              <h2 className="mt-6 text-4xl font-black tracking-tight text-slate-900 lg:text-6xl">
+                Everything Needed
+                For Transport
+                Management
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
+                Manage routes,
+                buses and student
+                transportation with
+                real-time visibility.
+              </p>
+
             </div>
-            <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {features.map((feature) => (
-                <div key={feature.title} className="group rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-sky-200 hover:shadow-[0_20px_60px_rgba(14,165,233,0.12)]">
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-sky-600">{feature.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{feature.description}</p>
+
+            <div className="mt-16 grid gap-6 lg:grid-cols-12">
+
+              {/* Left Big Card */}
+              <div className="relative overflow-hidden rounded-[40px] border border-blue-100 bg-white p-8 shadow-[0_20px_60px_rgba(37,99,235,0.08)] lg:col-span-5">
+
+                <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-blue-200/20 blur-[100px]" />
+
+                <div className="relative">
+
+                  <div className="rounded-[24px] border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-4 w-fit shadow-sm">
+                    <p className="text-3xl">
+                      🚌
+                    </p>
+                  </div>
+
+                  <h3 className="mt-8 text-4xl font-black text-slate-900">
+                    Smarter
+                    Transport
+                    Tracking
+                  </h3>
+
+                  <p className="mt-5 text-lg leading-8 text-slate-500">
+                    Track buses,
+                    manage routes and
+                    improve school
+                    transport efficiency.
+                  </p>
+
+                  <div className="mt-10 flex flex-wrap gap-3">
+
+                    {[
+                      "Buses",
+                      "Routes",
+                      "Drivers",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-slate-600"
+                      >
+                        {item}
+                      </div>
+                    ))}
+
+                  </div>
+
                 </div>
-              ))}
+              </div>
+
+              {/* Right Cards */}
+              <div className="grid gap-6 lg:col-span-7 lg:grid-cols-2">
+
+                {[
+                  {
+                    title: "Bus Tracking",
+                    desc:
+                      "Track school buses and routes in real-time.",
+                  },
+                  {
+                    title: "Route Management",
+                    desc:
+                      "Manage pickup and drop routes efficiently.",
+                  },
+                  {
+                    title: "Student Transport",
+                    desc:
+                      "Assign students to buses digitally.",
+                  },
+                  {
+                    title: "Transport Reports",
+                    desc:
+                      "Get transport analytics and reports.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[32px] border border-blue-100 bg-white p-7 shadow-[0_14px_50px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-blue-200"
+                  >
+
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-slate-500">
+                      {item.desc}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
             </div>
+
           </div>
         </section>
 
-        <section className="bg-slate-50 py-24">
-          <div className="mx-auto max-w-7xl px-6 text-center">
-            <span className="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">Transport Workflow</span>
-            <h2 className="mt-6 text-4xl font-black text-slate-900">Simple Transport Management Workflow</h2>
-            <p className="mt-4 text-lg text-slate-600">Manage buses, students and routes efficiently.</p>
-            <div className="mt-16 grid gap-8 md:grid-cols-3 lg:grid-cols-5">
-              {workflow.map((step, index) => (
-                <div key={step} className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-sky-500 text-lg font-bold text-white">{index + 1}</div>
-                  <h3 className="mt-5 font-semibold text-slate-900">{step}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQ />
+        
 
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <span className="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">Transport Dashboard</span>
-            <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">Real-time School Transport & Route Tracking</h2>
-            <p className="mt-5 max-w-3xl text-lg text-slate-600">Monitor buses, routes, drivers, transport capacity and student assignments from one centralized dashboard.</p>
-            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-3xl font-black text-sky-600">{stat.value}</h3>
-                  <p className="mt-2 text-slate-600">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-white p-4 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-              <Image src="/images/transport-dashboard.png" alt="Transport Route Analytics Dashboard" width={1600} height={900} className="w-full rounded-[30px]" />
-            </div>
-          </div>
-        </section>
-
-        <FAQ title="Frequently Asked Questions" description="Learn more about school transport management workflows." faqs={[
-          { question: "Can schools manage buses digitally?", answer: "Yes, OptimSkool helps schools manage buses, routes and transport operations digitally." },
-          { question: "Can transport routes and stops be managed?", answer: "Yes, routes and bus stops can be configured and tracked efficiently." },
-          { question: "Can schools assign students to buses?", answer: "Yes, students can be assigned to buses and routes digitally." },
-          { question: "Can driver information be managed?", answer: "Yes, schools can manage driver details and transport assignments." },
-          { question: "Does OptimSkool provide transport reports?", answer: "Yes, schools can generate transport reports and analytics instantly." },
-        ]} />
-        <FinalCTA />
       </main>
+
       <Footer />
     </>
   );

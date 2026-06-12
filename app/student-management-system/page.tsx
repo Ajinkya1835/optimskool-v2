@@ -1,119 +1,252 @@
-import type { Metadata } from "next";
+/* app/student-management-system/page.tsx */
+
 import Image from "next/image";
+import Link from "next/link";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FAQ from "@/components/faq";
 import FinalCTA from "@/components/final-cta";
 
-export const metadata: Metadata = {
-  title: "Student Management System",
-  description: "Manage student records, admissions, parent details and classroom assignments with OptimSkool Student Management System.",
-  alternates: { canonical: "/student-management-system" },
-};
-
-const features = [
-  { title: "Student Records", description: "Maintain centralized student information with complete academic and personal records." },
-  { title: "Admission Tracking", description: "Track admissions digitally with unique admission numbers and records." },
-  { title: "Parent Management", description: "Manage parent contact information and communication efficiently." },
-  { title: "Classroom Assignment", description: "Assign and organize students according to classrooms and sections." },
-  { title: "Search & Filters", description: "Quickly search students using names, admission numbers and classrooms." },
-  { title: "Gender & Category Tracking", description: "Organize students with structured demographic management." },
-  { title: "Hostel & Bus Management", description: "Track hostel and transport student information efficiently." },
-  { title: "Student Status Management", description: "Monitor active students, transfers and academic status updates." },
-];
-const workflow = ["Add Student", "Assign Classroom", "Manage Records", "Track Progress", "Generate Reports"];
-const stats = [
-  { value: "100%", label: "Digital Records" },
-  { value: "Instant", label: "Student Search" },
-  { value: "Real-time", label: "Database Updates" },
-  { value: "24/7", label: "Student Access" },
-];
-
 export default function StudentManagementPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white">
-        <section className="relative overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-24 lg:py-32">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-[1fr_1.1fr]">
-            <div>
-              <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">Student Management System</span>
-              <h1 className="mt-6 text-5xl font-black tracking-tight text-slate-900 lg:text-7xl">Smart Student Management for Schools</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">Manage student records, admissions, classroom assignments, parent details and academic tracking from one centralized student management system.</p>
-              <div className="mt-8 flex flex-wrap gap-3 max-sm:gap-2">
-                {["Student Records", "Admission Tracking", "Parent Management", "Classroom Assignment"].map((item) => (
-                  <span key={item} className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm">{item}</span>
-                ))}
+
+      <main className="overflow-hidden bg-white text-slate-900">
+
+        {/* HERO */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white pt-44 pb-28">
+
+          <div className="absolute inset-0 bg-grid opacity-40" />
+
+          {/* glows */}
+          <div className="absolute left-1/2 -top-20 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-200/35 blur-[120px]" />
+          <div className="absolute right-0 top-40 h-[350px] w-[400px] rounded-full bg-cyan-200/25 blur-[100px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
+            <div className="max-w-5xl">
+
+              <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Student Management System
+              </span>
+
+              <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-slate-900 lg:text-7xl">
+                Smarter Student
+                Management For
+                Schools
+              </h1>
+
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-500 lg:text-xl">
+                Manage student records,
+                admissions, attendance,
+                academic performance and
+                profiles through one
+                centralized ERP system.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:brightness-105 hover:shadow-[0_8px_40px_rgba(6,182,212,0.45)]"
+                >
+                  Request Demo
+                </Link>
+
+                <Link
+                  href="/pricing"
+                  className="rounded-full border border-blue-200 bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50"
+                >
+                  View Pricing
+                </Link>
+
               </div>
+
+              <div className="mt-12 flex flex-wrap gap-4">
+
+                {[
+                  "Student Profiles",
+                  "Academic Records",
+                  "Attendance Tracking",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-blue-100 bg-white px-5 py-3 text-sm font-medium text-slate-600 shadow-sm"
+                  >
+                    ✓ {item}
+                  </div>
+                ))}
+
+              </div>
+
             </div>
-            <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] lg:scale-110">
-              <Image src="/images/student-dashboard.png" alt="Student Management Dashboard" width={1200} height={750} className="h-full w-full rounded-[28px] object-cover" />
+
+            {/* Dashboard */}
+            <div className="relative mt-20">
+
+              <div className="absolute left-1/2 top-1/2 h-[380px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/20 blur-[120px]" />
+
+              <div className="relative overflow-hidden rounded-[42px] border border-blue-100 bg-white p-3 shadow-[0_40px_120px_rgba(37,99,235,0.15),0_0_0_1px_rgba(59,130,246,0.08)]">
+
+                <div className="mb-3 flex items-center gap-2 border-b border-slate-100 px-2 pb-3">
+
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-green-400" />
+
+                  <div className="ml-4 rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-medium text-blue-600">
+                    Student Dashboard
+                  </div>
+
+                </div>
+
+                <Image
+                  src="/images/student-dashboard.png"
+                  alt="Student Management Dashboard"
+                  width={1400}
+                  height={900}
+                  className="w-full rounded-[28px]"
+                  priority
+                />
+
+              </div>
+
             </div>
+
           </div>
         </section>
 
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
+        {/* FEATURES */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24">
+
+          <div className="absolute right-0 top-0 h-[350px] w-[350px] rounded-full bg-blue-200/20 blur-[120px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6">
+
             <div className="max-w-3xl">
-              <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">Student Features</span>
-              <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">Everything Needed for Smart Student Management</h2>
-              <p className="mt-5 text-lg text-slate-600">OptimSkool simplifies student database management, admissions, classroom assignments and parent information through one centralized ERP system.</p>
+
+              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+                Smart Student Features
+              </div>
+
+              <h2 className="mt-6 text-4xl font-black tracking-tight text-slate-900 lg:text-6xl">
+                Everything Needed
+                For Student
+                Management
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
+                Centralize student data,
+                simplify record keeping
+                and manage academics
+                efficiently.
+              </p>
+
             </div>
-            <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {features.map((feature) => (
-                <div key={feature.title} className="group rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-cyan-200 hover:shadow-[0_20px_60px_rgba(8,145,178,0.10)]">
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-cyan-600">{feature.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{feature.description}</p>
+
+            <div className="mt-16 grid gap-6 lg:grid-cols-12">
+
+              {/* Left Big Card */}
+              <div className="relative overflow-hidden rounded-[40px] border border-blue-100 bg-white p-8 shadow-[0_20px_60px_rgba(37,99,235,0.08)] lg:col-span-5">
+
+                <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-blue-200/20 blur-[100px]" />
+
+                <div className="relative">
+
+                  <div className="rounded-[24px] border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-4 w-fit shadow-sm">
+                    <p className="text-3xl">
+                      👨‍🎓
+                    </p>
+                  </div>
+
+                  <h3 className="mt-8 text-4xl font-black text-slate-900">
+                    Smarter
+                    Student
+                    Tracking
+                  </h3>
+
+                  <p className="mt-5 text-lg leading-8 text-slate-500">
+                    Manage student
+                    profiles, records,
+                    attendance and academic
+                    performance digitally.
+                  </p>
+
+                  <div className="mt-10 flex flex-wrap gap-3">
+
+                    {[
+                      "Profiles",
+                      "Attendance",
+                      "Academics",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-slate-600"
+                      >
+                        {item}
+                      </div>
+                    ))}
+
+                  </div>
+
                 </div>
-              ))}
+              </div>
+
+              {/* Right Cards */}
+              <div className="grid gap-6 lg:col-span-7 lg:grid-cols-2">
+
+                {[
+                  {
+                    title: "Student Profiles",
+                    desc:
+                      "Centralized student information system.",
+                  },
+                  {
+                    title: "Attendance Tracking",
+                    desc:
+                      "Monitor attendance and activity.",
+                  },
+                  {
+                    title: "Academic Records",
+                    desc:
+                      "Manage performance and grades.",
+                  },
+                  {
+                    title: "Student Analytics",
+                    desc:
+                      "Get real-time student insights.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[32px] border border-blue-100 bg-white p-7 shadow-[0_14px_50px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-blue-200"
+                  >
+
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-slate-500">
+                      {item.desc}
+                    </p>
+
+                  </div>
+                ))}
+
+              </div>
+
             </div>
+
           </div>
         </section>
 
-        <section className="bg-slate-50 py-24">
-          <div className="mx-auto max-w-7xl px-6 text-center">
-            <span className="rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">Student Workflow</span>
-            <h2 className="mt-6 text-4xl font-black text-slate-900">Simple Student Management Workflow</h2>
-            <p className="mt-4 text-lg text-slate-600">Add students, assign classrooms and manage academic records digitally.</p>
-            <div className="mt-16 grid gap-8 md:grid-cols-3 lg:grid-cols-5">
-              {workflow.map((step, index) => (
-                <div key={step} className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-lg font-bold text-white">{index + 1}</div>
-                  <h3 className="mt-5 font-semibold text-slate-900">{step}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQ />
+        
 
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <span className="rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-700">Student Dashboard</span>
-            <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">Real-time Student Database & Record Management</h2>
-            <p className="mt-5 max-w-3xl text-lg text-slate-600">Monitor admissions, student records, parent information and academic details from one centralized student dashboard.</p>
-            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-3xl font-black text-cyan-600">{stat.value}</h3>
-                  <p className="mt-2 text-slate-600">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-14 overflow-hidden rounded-[40px] border border-slate-200 bg-slate-50 p-6 shadow-[0_40px_120px_rgba(15,23,42,0.12)]">
-              <Image src="/images/student-dashboard.png" alt="Student Records Analytics Dashboard" width={1600} height={900} className="w-full rounded-[28px] object-cover" />
-            </div>
-          </div>
-        </section>
-
-        <FAQ title="Frequently Asked Questions" description="Learn more about OptimSkool student management workflows." faqs={[
-          { question: "Can schools manage student records digitally?", answer: "Yes, OptimSkool centralizes student records, admissions and academic information digitally." },
-          { question: "Can parent information be managed?", answer: "Yes, schools can manage parent contact information and communication through one platform." },
-          { question: "Does OptimSkool support classroom management?", answer: "Yes, students can be organized according to classrooms and sections." },
-          { question: "Can schools search student records instantly?", answer: "Yes, student records can be searched instantly using admission number, classroom or student name." },
-          { question: "Can transport and hostel students be managed?", answer: "Yes, OptimSkool supports hostel and transport-related student management." },
-        ]} />
-        <FinalCTA />
       </main>
+
       <Footer />
     </>
   );

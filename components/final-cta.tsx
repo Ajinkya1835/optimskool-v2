@@ -2,93 +2,86 @@ import Link from "next/link";
 
 export default function FinalCTA() {
   return (
-    <section className="relative z-10 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-28">
 
-      {/* CTA */}
-      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 py-28 text-white">
+      {/* Grid */}
+      <div className="absolute inset-0 bg-grid opacity-40" />
 
-        <div className="mx-auto max-w-5xl px-6 text-center">
+      {/* Glow */}
+      <div className="absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-200/35 blur-[140px]" />
 
-          <span className="rounded-full bg-white/10 px-5 py-2 text-sm font-medium text-blue-200">
-            OptimSkool ERP
-          </span>
+      <div className="relative mx-auto max-w-6xl px-6">
 
-          <h2 className="mt-8 text-5xl font-black leading-tight lg:text-6xl">
-            Simplify School
-            Administration with{" "}
-            <span className="text-blue-400">
-              OptimSkool
-            </span>
-          </h2>
+        <div className="relative overflow-hidden rounded-[44px] border border-blue-100 bg-white p-10 text-center shadow-[0_30px_100px_rgba(37,99,235,0.10)] lg:p-16">
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-            Digitize attendance,
-            examinations, fees,
-            reports, payroll and
-            student management
-            through one centralized
-            school ERP platform.
-          </p>
+          {/* Decorative glow */}
+          <div className="absolute -top-10 left-1/2 h-[250px] w-[250px] -translate-x-1/2 rounded-full bg-cyan-100/50 blur-[100px]" />
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-5">
+          <div className="relative">
 
-            <Link
-              href="/contact"
-              className="rounded-2xl bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-blue-500"
-            >
-              Contact Us
-            </Link>
+            {/* Badge */}
+            <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-600 shadow-sm">
+              OptimSkool ERP
+            </div>
 
-            <Link
-              href="/pricing"
-              className="rounded-2xl border border-white/20 bg-white/5 px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/10"
-            >
-              View Pricing
-            </Link>
+            {/* Heading */}
+            <h2 className="mt-8 text-5xl font-black tracking-[-0.04em] text-slate-900 lg:text-6xl lg:leading-[1]">
+              Simplify School
+              <br />
+              Administration
+            </h2>
+
+            {/* Description */}
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-500 lg:text-xl">
+              Manage attendance, fees,
+              payroll, examinations and
+              student administration
+              through one intelligent
+              ERP platform.
+            </p>
+
+            {/* Benefits */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+
+              {[
+                "Attendance",
+                "Fee Management",
+                "Examinations",
+                "Payroll",
+                "Student Analytics",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-slate-700"
+                >
+                  ✓ {item}
+                </div>
+              ))}
+
+            </div>
+
+            {/* CTA */}
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+
+              <Link
+                href="/contact"
+                className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:brightness-105 hover:shadow-[0_8px_40px_rgba(6,182,212,0.45)]"
+              >
+                Request Demo
+              </Link>
+
+              <Link
+                href="/pricing"
+                className="rounded-full border border-blue-200 bg-white px-8 py-4 font-semibold text-blue-600 shadow-sm transition hover:border-blue-300 hover:bg-blue-50"
+              >
+                View Pricing
+              </Link>
+
+            </div>
 
           </div>
-
         </div>
       </div>
-
-      {/* STATS */}
-      <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 py-16">
-
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 text-center md:grid-cols-3">
-
-          <div>
-            <h3 className="text-5xl font-black text-white">
-              20+
-            </h3>
-
-            <p className="mt-3 text-lg font-medium text-white">
-              Institutions Trust Us
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-5xl font-black text-white">
-              99.9%
-            </h3>
-
-            <p className="mt-3 text-lg font-medium text-white">
-              Uptime Guarantee
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-5xl font-black text-white">
-              24/7
-            </h3>
-
-            <p className="mt-3 text-lg font-medium text-white">
-              Support Available
-            </p>
-          </div>
-
-        </div>
-      </div>
-
     </section>
   );
 }

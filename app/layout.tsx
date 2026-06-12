@@ -1,82 +1,165 @@
+// app/layout.tsx
+
 import type { Metadata } from "next";
-import { OG_IMAGE, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
+const siteUrl =
+  "https://optimskool.com";
+
 export const metadata: Metadata = {
-  title: "OptimSkool | School ERP Software India",
+  metadataBase: new URL(siteUrl),
+
+  title: {
+    default:
+      "OptimSkool | Best School ERP Software in India",
+    template:
+      "%s | OptimSkool",
+  },
 
   description:
-    "OptimSkool is an all-in-one school ERP software and LMS platform for educational institutions. Manage attendance, fees, academics, payroll, transport and communication from one dashboard.",
+    "OptimSkool is an all-in-one School ERP Software in India to manage attendance, fees, exams, payroll, admissions, transport, academics and communication through one intelligent dashboard.",
 
   keywords: [
     "school ERP software",
     "school management software",
     "school ERP software India",
-    "school ERP",
-    "LMS for schools",
-    "school management system",
-    "education ERP",
+    "school ERP system",
+    "best school ERP software",
+    "school LMS",
+    "attendance management system",
+    "fee management system",
+    "school management system India",
+    "education ERP software",
   ],
 
-  metadataBase: new URL(SITE_URL),
+  authors: [
+    {
+      name: "OptimSkool",
+    },
+  ],
+
+  creator: "OptimSkool",
+  publisher: "OptimSkool",
 
   alternates: {
     canonical: "/",
   },
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   openGraph: {
-    title: "OptimSkool School ERP",
-    description: "Smart School ERP Software for Modern Institutions.",
-    url: SITE_URL,
-    siteName: "OptimSkool",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630 }],
     type: "website",
+    locale: "en_IN",
+    url: siteUrl,
+    siteName: "OptimSkool",
+    title:
+      "Best School ERP Software in India | OptimSkool",
+    description:
+      "Manage attendance, fees, admissions, payroll, exams and school administration using OptimSkool School ERP.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt:
+          "OptimSkool School ERP Software",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "OptimSkool | School ERP Software India",
-    description: "Smart School ERP Software for Modern Institutions.",
-    images: [OG_IMAGE],
+    title:
+      "Best School ERP Software in India | OptimSkool",
+    description:
+      "Manage attendance, fees, exams, payroll and academics with OptimSkool ERP.",
+    images: ["/og-image.jpg"],
   },
-};
 
-// JSON-LD schema
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "OptimSkool",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  url: SITE_URL,
-  description:
-    "All-in-one school ERP software and LMS platform for educational institutions in India.",
-  offers: {
-    "@type": "Offer",
-    price: "3",
-    priceCurrency: "INR",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
-  publisher: {
-    "@type": "Organization",
-    name: "OptimSkool",
-    url: SITE_URL,
-  },
+
+  category: "education",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <head>
+      <body>
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context":
+                "https://schema.org",
+              "@type":
+                "SoftwareApplication",
+              name: "OptimSkool",
+              applicationCategory:
+                "EducationalApplication",
+              operatingSystem: "Web",
+              url: siteUrl,
+              description:
+                "OptimSkool is a School ERP software for attendance, fees, payroll, examinations and school administration.",
+              brand: {
+                "@type": "Brand",
+                name: "OptimSkool",
+              },
+              provider: {
+                "@type":
+                  "Organization",
+                name: "OptimSkool",
+                url: siteUrl,
+              },
+            }),
+          }}
         />
-      </head>
-      <body>{children}</body>
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context":
+                "https://schema.org",
+              "@type":
+                "Organization",
+              name: "OptimSkool",
+              url: siteUrl,
+              logo: `${siteUrl}/logo.png`,
+              sameAs: [],
+              contactPoint: {
+                "@type":
+                  "ContactPoint",
+                contactType:
+                  "customer support",
+                email:
+                  "support@metagrad.in",
+              },
+            }),
+          }}
+        />
+
+        {children}
+      </body>
     </html>
   );
 }
